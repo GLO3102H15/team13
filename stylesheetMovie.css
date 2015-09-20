@@ -4,10 +4,13 @@ body{
     height: 2000px;
 }
 
+*:focus {
+    outline: 0;
+}
+
 #menu{
     background: rgba(20, 20, 20, 0.51);
-    height: 65px;
-    border-bottom: solid 1px #3D3E3F;
+    height: 80px;
     width:100%;
     display:block;
     position:fixed;
@@ -17,6 +20,9 @@ body{
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     border-top: solid 4px #16A79D;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
 }
 
 #menu ul{
@@ -33,12 +39,12 @@ body{
     width: 120px;
     height: 40px;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 20px;
     cursor: pointer;
-    margin: 0px 5px;
-    -webkit-border-radius: 0px 60px;
-    -moz-border-radius: 0px 60px;
-    border-radius: 0px 60px;
+    margin: 10px 5px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
 }
 
 #menu li.controlMenu{
@@ -50,11 +56,53 @@ body{
 }
 
 #menu li.settings{
-    width: 80px;
-    background-image: url("/img/settingsIcon.png");
-    background-size: 80px;
-    background-repeat: no-repeat;
-    background-position: left top;
+    width: 30px;
+    height: 40px;
+    margin: 10px;
+    background: #444349;
+}
+
+#menu li.chercher{
+    width: 200px;
+    background-color: #444349;
+    height: 20px;
+    margin: 25px 5px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+
+}
+
+#menu li.chercher:hover{
+    background-color: #444349;
+}
+
+#menu .searchBox{
+    width: 155px;
+    height: 29px;
+    border: none;
+    background-color: #444349;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    padding-top: 0px;
+    margin-top: 0px;
+    font-size: 14px;
+    font-weight: 100;
+    font-family: 'Roboto';
+    color: #FFFFFF;
+}
+
+#menu .searchIcon{
+     float: right;
+     margin-right: 10px;
+     margin-top: 5px;
+ }
+
+#menu .searchIcon:hover{
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+    color: #d43a45;
 }
 
 #menu li a{
@@ -68,16 +116,32 @@ body{
 
 #menu li.chosen{
     background: #16A79D;
+    border-left: solid white 2px;
+}
+
+#menu li.logout{
+    width: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #menu li.logout:hover{
     background: #d43a45;
 }
 
+#movieContent{
+    width: 100%;
+    height: 100%;
+    margin-top: 90px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
 /* Responsive pour moins de 800px */
 @media screen and (max-width:800px) {
     #menu{
         height: 40px;
+        border-top: none;
     }
 
     #menu li{
@@ -87,14 +151,36 @@ body{
         padding-top: 10px;
         cursor: pointer;
         margin: 0px 5px;
-        -webkit-border-radius: 0px 60px;
-        -moz-border-radius: 0px 60px;
-        border-radius: 0px 60px;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px ;
+        border-radius: 30px;
+    }
+
+    #menu li.settings{
+        width: 30px;
+        height: 30px;
+        margin: 0px 10px;
+    }
+
+    #menu li.chercher{
+        margin: 6px 5px;
+        width: 120px;
+    }
+
+    #menu .searchBox{
+        width: 80px;
+    }
+
+    #menu li.logout{
+        width: 40px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 14px;
     }
 }
 
 /* Responsive pour moins de 500px */
-@media screen and (max-width:570px) {
+@media screen and (max-width:700px) {
     #menu{
         display: none;
     }
@@ -103,3 +189,4 @@ body{
         display: block;
     }
 }
+
