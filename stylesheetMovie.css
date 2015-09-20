@@ -1,0 +1,105 @@
+body{
+    background: #444349;
+    margin: 0px;
+    height: 2000px;
+}
+
+#menu{
+    background: rgba(20, 20, 20, 0.51);
+    height: 65px;
+    border-bottom: solid 1px #3D3E3F;
+    width:100%;
+    display:block;
+    position:fixed;
+    top:0;
+    left:0;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    border-top: solid 4px #16A79D;
+}
+
+#menu ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0px;
+
+}
+
+#menu li{
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    padding-top: 25px;
+    cursor: pointer;
+    margin: 0px 5px;
+    -webkit-border-radius: 0px 60px;
+    -moz-border-radius: 0px 60px;
+    border-radius: 0px 60px;
+}
+
+#menu li.controlMenu{
+    width: 40px;
+    float: left;
+    position: absolute;
+    left: 0;
+    display: none;
+}
+
+#menu li.settings{
+    width: 80px;
+    background-image: url("/img/settingsIcon.png");
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+#menu li a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#menu li:hover{
+    background: #16A79D;
+}
+
+#menu li.chosen{
+    background: #16A79D;
+}
+
+#menu li.logout:hover{
+    background: #d43a45;
+}
+
+/* Responsive pour moins de 800px */
+@media screen and (max-width:800px) {
+    #menu{
+        height: 40px;
+    }
+
+    #menu li{
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        padding-top: 10px;
+        cursor: pointer;
+        margin: 0px 5px;
+        -webkit-border-radius: 0px 60px;
+        -moz-border-radius: 0px 60px;
+        border-radius: 0px 60px;
+    }
+}
+
+/* Responsive pour moins de 500px */
+@media screen and (max-width:570px) {
+    #menu{
+        display: none;
+    }
+
+    #menu li.controlMenu{
+        display: block;
+    }
+}
