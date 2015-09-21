@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbf2a6b0-db54-438d-a4f0-a8a1af2a4101" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/menu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie.html" afterPath="$PROJECT_DIR$/movie.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stylesheetMovie.css" afterPath="$PROJECT_DIR$/stylesheetMovie.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Projet de session.iws" />
@@ -94,7 +91,7 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1928" />
+    <option name="x" value="1883" />
     <option name="y" value="23" />
     <option name="width" value="1271" />
     <option name="height" value="1771" />
@@ -162,7 +159,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Mercurial" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="/usr/bin/git" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
@@ -268,7 +265,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442805970644</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Menu responsive pas mal fini (encore seulement sur movie.html)">
+      <created>1442814107971</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1442814107971</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -281,7 +284,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1928" y="23" width="1271" height="1771" extended-state="0" />
+    <frame x="1883" y="23" width="1271" height="1771" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1728" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -314,7 +317,8 @@
     <MESSAGE value="Mise à jour du menu, manque faire responsive pour mobile (faire apparaitre/disparaitre).&#10;Si vous êtes d'accord on met ce menu partout et on commence à faire les pages." />
     <MESSAGE value="Test" />
     <MESSAGE value="Update movie.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update movie.html" />
+    <MESSAGE value="Menu responsive pas mal fini (encore seulement sur movie.html)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Menu responsive pas mal fini (encore seulement sur movie.html)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
