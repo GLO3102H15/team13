@@ -6,19 +6,33 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheetMovie.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="menu.js"></script>
     <title>UMovie - Movies</title>
 </head>
 <body>
+    <div id="miniBar"><div class="controlMenu" onclick="menuOnOff()"><i class="fa fa-bars"></i></div>
+    <form><input class="searchBox" type="text" placeholder="Search..." required><div class="searchIcon"><i class="fa fa-search"></i>
+    </div></form></div>
+    <div id="miniMenu">
+        <nav>
+            <ul>
+                <li>MOVIES</li>
+                <li>TV SHOWS</li>
+                <li>ACTORS</li>
+                <li>SETTINGS</li>
+                <li class="logout">LOGOUT</li>
+            </ul>
+        </nav>
+    </div>
     <div id="menu">
         <nav>
             <ul>
-                <li class="controlMenu">X</li>
                 <li class="chosen">MOVIES</li>
                 <li><a href="#">TV SHOWS</a></li>
                 <li><a href="#">ACTORS</a></li>
                 <li class="chercher"><form><input class="searchBox" type="text" placeholder="Search..." required><div class="searchIcon"><i class="fa fa-search"></i>
                 </div></form></li>
-                <li><a href="#">Username</a></li>
+                <li class="user">Username</li>
                 <li class="logout">LOG<br>OUT</li>
                 <li class="settings"><i class="fa fa-cog"></i></li>
             </ul>

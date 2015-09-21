@@ -2,10 +2,115 @@ body{
     background: #444349;
     margin: 0px;
     height: 2000px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
 }
 
 *:focus {
     outline: 0;
+}
+
+
+
+#miniBar {
+    background: rgba(20, 20, 20, 0.50);
+    height: 47px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: none;
+}
+
+#miniBar .controlMenu{
+    width: 40px;
+    height: 40px;
+    background: #16A79D;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 28px;
+    margin: 0;
+    padding-top: 7px;
+    padding-left: 14px;
+    float: left;
+    display: none;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#miniBar .searchBox{
+    width: 159px;
+    height: 29px;
+    border: none;
+    position: fixed;
+    float: right;
+    top: 0;
+    right: 0;
+    background-color: #444349;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    padding-left: 14px;
+    margin-top: 8px;
+    margin-right: 5px;
+    margin-left: 9px;
+    font-size: 14px;
+    font-weight: 100;
+    font-family: 'Roboto';
+    color: #FFFFFF;
+    display: none;
+}
+
+#miniBar .searchIcon{
+    position: fixed;
+    float: right;
+    width: 30px;
+    height: 47px;
+    top: 0;
+    right: 0;
+    margin-top: 12px;
+    color: #FFFFFF;
+}
+
+#miniBar .searchIcon:hover{
+    color: #d43a45;
+}
+
+#miniBar .controlMenu:hover{
+    background: #d43a45;
+
+}
+
+#miniMenu{
+    margin-top: 47px;
+    width: 100%;
+    background: #16A79D;
+    display: none;
+    position:fixed;
+    top:0;
+    left:0;
+    color: #FFFFFF;
+}
+
+#miniMenu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0px;
+}
+
+#miniMenu li{
+    height: 34px;
+    cursor: pointer;
+    padding-top: 16px;
+    padding-left: 14px;
+}
+
+#miniMenu li:hover{
+    background-color: #444349;
+}
+
+#miniMenu li.logout:hover{
+    background: #d43a45;
 }
 
 #menu{
@@ -32,7 +137,6 @@ body{
     flex-direction: row;
     justify-content: flex-end;
     margin: 0px;
-
 }
 
 #menu li{
@@ -45,14 +149,6 @@ body{
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
-}
-
-#menu li.controlMenu{
-    width: 40px;
-    float: left;
-    position: absolute;
-    left: 0;
-    display: none;
 }
 
 #menu li.settings{
@@ -116,7 +212,6 @@ body{
 
 #menu li.chosen{
     background: #16A79D;
-    border-left: solid white 2px;
 }
 
 #menu li.logout{
@@ -132,9 +227,10 @@ body{
 #movieContent{
     width: 100%;
     height: 100%;
-    margin-top: 90px;
+    margin-top: 100px;
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
 }
 
 /* Responsive pour moins de 800px */
@@ -142,6 +238,9 @@ body{
     #menu{
         height: 40px;
         border-top: none;
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
     }
 
     #menu li{
@@ -158,8 +257,8 @@ body{
 
     #menu li.settings{
         width: 30px;
-        height: 30px;
-        margin: 0px 10px;
+        height: 26px;
+        margin: 2px 10px;
     }
 
     #menu li.chercher{
@@ -177,16 +276,43 @@ body{
         padding-bottom: 5px;
         font-size: 14px;
     }
+
+    #movieContent{
+        width: 100%;
+        height: 100%;
+        margin: 65px 14px 0px 14px;
+        font-size: 28px;
+        font-family: 'Roboto', sans-serif;
+    }
 }
 
 /* Responsive pour moins de 500px */
 @media screen and (max-width:700px) {
+    #miniBar {
+        display: block;
+    }
+    #miniBar .controlMenu{
+        display: block;
+    }
+
+    #miniBar .searchBox{
+        display: block;
+    }
+
+    #miniMenu {
+        display: none;
+    }
+
     #menu{
         display: none;
     }
 
-    #menu li.controlMenu{
-        display: block;
+    #movieContent{
+        width: 100%;
+        height: 100%;
+        margin-top: 65px;
+        font-size: 22px;
+        font-family: 'Roboto', sans-serif;
     }
 }
 
