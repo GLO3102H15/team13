@@ -1,0 +1,85 @@
+body{
+    background: #444349;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+*:focus {
+    outline: 0;
+}
+
+#logIn{
+    margin: auto;
+    width: 300px;
+    height: 460px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(20, 20, 20, 0.50);
+    padding: 20px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    border: solid 2px;
+    text-align: center;
+}
+
+#logo{
+    background-color: #16A79D;
+    width: 100px;
+    height: 64px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 36px;
+    font-size: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 245px;
+    height: 40px;
+    border: none;
+    background-color: #444349;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    padding-top: 0px;
+    margin: 15px;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: 100;
+    font-family: 'Roboto';
+    color: #FFFFFF;
+}
+
+#logInBt{
+    background-color: #16A79D;
+    width: 266px;
+    height: 40px;
+    border: none;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+#signUpBt{
+    background-color: #d43a45;
+    width: 266px;
+    height: 40px;
+    border: none;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    font-size: 14px;
+}
