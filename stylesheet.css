@@ -433,4 +433,8 @@ body{
         font-size: 22px;
         font-family: 'Roboto', sans-serif;
     }
+
+    #myWatchlistMenu {
+        visibility: hidden;
+    }
 }
