@@ -306,7 +306,13 @@ body{
 #movieContent img{
     width: 80%;
 }
+/* Responsive pour moins de 1020px */
+@media screen and (min-width:1021px) {
 
+    #miniMenu {
+        visibility: hidden;
+    }
+}
 /* Responsive pour moins de 1020px */
 @media screen and (max-width:1020px) and (min-width: 849px){
     #miniBar {
