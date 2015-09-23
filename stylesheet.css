@@ -438,3 +438,55 @@ body{
         visibility: hidden;
     }
 }
+
+/* CSS ACTOR.HTML */
+.container{
+    width:80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center !important;
+    margin-top: 100px;
+}
+.list-box{
+    width: 100%;
+    text-align: left;
+}
+.box{
+    display: inline-block; 
+    position : relative;
+    width: 150px;
+    height: 260px;
+    margin: 15px; 
+}
+.box img{
+    width:150px;
+    height:212px;
+}
+.box span{
+    display:block;
+    color : #fff;
+}
+.box .info{
+    opacity: 0.6;
+}
+.box .shadow{
+    display: none;
+    color:#fff;
+    opacity: 1;
+    line-height: 212px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 150px;
+    height: 212px;
+    position : absolute;
+    top: 0px;
+    left:0px;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 999;
+}
+.box .shadow span {
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
