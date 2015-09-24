@@ -444,7 +444,7 @@ body{
     width:80%;
     margin-left: 10%;
     margin-right: 10%;
-    text-align: center !important;
+    /*text-align: center !important;*/
     margin-top: 100px;
 }
 .list-box{
@@ -489,4 +489,56 @@ body{
     width: 100%;
     vertical-align: middle;
     text-align: center;
+}
+
+/* ACTOR DETAIL */
+.filmographie{
+    padding: 20px;
+    width:100;
+    background-color: grey;
+    opacity: 1;
+    border-radius: 5px;
+    text-align: left;
+}
+.col-3{
+    width: 33.1%;
+    margin: 10px 0px;
+    background-color: grey;
+    display: inline-block;
+}
+.review{
+    
+}
+.review img{
+    width: 200px;
+    position: relative;
+    left:50%;
+    margin-left:-100px;
+    margin-top: 25px;
+    margin-bottom: 10px; 
+}
+.review div{
+    display: block; 
+}
+.review span{
+    display: inline-block;
+}
+.review .titre{
+    text-decoration: underline;
+}
+.col-7{
+    width: 66.5%;
+    margin: 10px 0px;
+    background-color: grey;
+    display: inline-block;
+}
+.container .titre-principal {
+    font-weight: bold;
+    font-size: 2em;
+    color:#fff;
+}
+.filmographie .titre {
+    font-size: 1em;
+    font-weight: bold;
+    color: #16A79D;
 }

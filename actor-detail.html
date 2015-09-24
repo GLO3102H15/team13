@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="menu.js"></script>
+    <title>UMovie - Actors</title>
+</head>
+<body>
+<div id="miniBar"><div class="controlMenu" onclick="menuOnOff()"><i class="fa fa-bars"></i></div>
+    <form><input class="searchBox" type="text" placeholder="Search..." required><div class="searchIcon"><i class="fa fa-search"></i>
+    </div></form></div>
+<div id="miniMenu">
+    <nav>
+        <ul>
+            <a href="index.html"><li>HOME</li></a>
+            <a href="movie.html"><li>MOVIES</li></a>
+            <a href="tvshow.html"><li>TV SHOWS</li></a>
+            <a href="actor.html"><li>ACTORS</li></a>
+            <li>SETTINGS</li>
+            <a href="login.html"><li class="logout">LOG-OUT</li></a>
+        </ul>
+    </nav>
+</div>
+<div id="menu">
+    <nav>
+        <ul>
+            <li class="goHome"><a href="index.html">U<i class="fa fa-ticket"></i>M<a/></li>
+            <li class="chercher"><form><input class="searchBox" type="text" placeholder="Search..." required><div class="searchIcon"><i class="fa fa-search"></i>
+            </div></form></li>
+            <li><a href="movie.html">MOVIES</a></li>
+            <li><a href="tvshow.html">TV SHOWS</a></li>
+            <li class="chosen">ACTORS</li>
+            <li class="user">USERNAME</li>
+            <li id="myWatchlist" onclick="menuWatchlistOnOff()">MY WATCHLIST <i class="fa fa-chevron-circle-down"></i></li>
+            <li class="logout"><a href="login.html">LOG<br>OUT<a/></li>
+            <li class="settings"><i class="fa fa-cog"></i></li>
+        </ul>
+    </nav>
+</div>
+<div id="myWatchlistMenu" onclick="menuWatchlistOnOff()">
+    <nav>
+        <ul>
+            <li>Example 1</li>
+            <li>Example 2</li>
+            <li>Example 3</li>
+            <li>Example 4</li>
+        </ul>
+    </nav>
+</div>
+<div class="container">
+    <div class="titre-principal">Robert Downey Jr</div>
+    <div class="col-3 review">
+        <img class="img-actor" src="img/robert.jpg"></img>
+        <div class="info">
+            <div><span class="titre">Age : </span><span>37 ans</span></div>
+            <div><span class="titre">Taille : </span><span>1m90</span></div>
+            <div><span class="titre">Statut : </span><span>Célibataire</span></div>
+            <div><span class="titre">Note : </span><span>3/5 (234 avis)</span></div>
+        </div>
+    </div>
+    <div class="col-7">
+        Robert Downey Jr, aka Robert pour les intimes est un peu le Steve Jobs du cinéma. Il l'a révolutionné sans forcement mettre de valeur ajouté. Les jaloux diront qu'il est égocentrique, playboy, philantrope, tout comme le personne de Tony Stark qu'il enrôle à merveille.
+        (oui oui je suis inspiré)
+    </div>
+    <div class="filmographie">
+        <div class="films">
+            <span class="titre">Films notoires</span>
+            <div class="liste">
+                <ul>
+                    <li>Iron Man 3 (2014)</li>
+                    <li>Iron Man 3</li>
+                    <li>Iron Man 3</li>
+                    <li>Iron Man 3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="serie">
+            <span class="titre">Série</span>
+            <div class="liste">
+                <ul>
+                    <li>Pas d'info</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+        });
+    </script>
+</body>
+</html>
