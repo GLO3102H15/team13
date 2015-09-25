@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheet.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="menu.js"></script>
@@ -51,46 +52,47 @@
     </nav>
 </div>
 <div class="container">
-    <div class="list-box">
-        <div class="box">
-            <img class="img-actor" src="img/robert.jpg"></img>
-            <div class="shadow"><span>Voir</span></div>
-            <span class="nom">Robert Downey Jr</span>
-            <span class="info">7 films - 35 ans</span>
+    <div class="titre-principal">Robert Downey Jr</div>
+    <div class="col-3 review">
+        <img class="img-actor" src="img/robert.jpg"></img>
+        <div class="info">
+            <div><span class="titre">Age : </span><span class="info-text">37 ans</span></div>
+            <div><span class="titre">Taille : </span><span class="info-text">1m90</span></div>
+            <div><span class="titre">Statut : </span><span class="info-text">Célibataire</span></div>
+            <div><span class="titre">Note : </span><span class="info-text">3/5 (234 avis)</span></div>
         </div>
-        <div class="box">
-            <img class="img-actor" src="img/robert.jpg"></img>
-            <div class="shadow"><span>Voir</span></div>
-            <span class="nom">Robert Downey Jr</span>
-            <span class="info">7 films - 35 ans</span>
+    </div>
+    <div class="col-7">
+        <span class="bio">Biographie</span>
+        <p>Robert Downey Jr, aka Robert pour les intimes est un peu le Steve Jobs du cinéma. Il l'a révolutionné sans forcement mettre de valeur ajouté. Les jaloux diront qu'il est égocentrique, playboy, philantrope, tout comme le personne de Tony Stark qu'il enrôle à merveille.
+            (oui oui je suis inspiré)</p>
+    </div>
+    <div class="filmographie">
+        <div class="films">
+            <span class="titre">Films notoires</span>
+            <div class="liste">
+                <ul>
+                    <li>Iron Man 3 (2014)</li>
+                    <li>Iron Man 3</li>
+                    <li>Iron Man 3</li>
+                    <li>Iron Man 3</li>
+                </ul>
+            </div>
         </div>
-        <div class="box">
-            <img class="img-actor" src="img/robert.jpg"></img>
-            <div class="shadow"><span>Voir</span></div>
-            <span class="nom">Robert Downey Jr</span>
-            <span class="info">7 films - 35 ans</span>
-        </div>
-        <div class="box">
-            <img class="img-actor" src="img/robert.jpg"></img>
-            <div class="shadow"><span>Voir</span></div>
-            <span class="nom">Robert Downey Jr</span>
-            <span class="info">7 films - 35 ans</span>
+        <div class="serie">
+            <span class="titre">Série</span>
+            <div class="liste">
+                <ul>
+                    <li>Pas d'info</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
-    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            
-            $('.img-actor').mouseover(function(){
-                $(this).parent().find('.shadow').css("display","block");
-            });
-            
-            $('.shadow').mouseleave(function(){
-                $(this).css("display","none");
-            });
-
-        });
-    </script>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+    });
+</script>
 </body>
 </html>
