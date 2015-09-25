@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheet.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -10,11 +13,12 @@
     <title>UMovie</title>
 </head>
 <body>
-<div id="miniBar"><div class="controlMenu" onclick="menuOnOff()"><i class="fa fa-bars"></i></div>
+<div id="miniBar" ><div class="controlMenu" onclick="menuOnOff()"><i class="fa fa-bars"></i></div>
     <form><input class="searchBox" type="text" placeholder="Search..." required><div class="searchIcon"><i class="fa fa-search"></i>
     </div></form></div>
 <div id="miniMenu">
     <nav>
+
         <ul>
             <a href="index.html"><li>HOME</li></a>
             <a href="movie.html"><li>MOVIES</li></a>
@@ -28,7 +32,7 @@
 <div id="menu">
     <nav>
         <ul>
-            <li class="goHome"><a href="index.html">U<i class="fa fa-ticket"></i>M<a/></li>
+            <li class="goHome"> <a href="index.html">U<i class="fa fa-ticket"></i> M</a> </li>
             <li class="chercher"><form><input class="searchBox" type="text" placeholder="Search..." required><div class="searchIcon"><i class="fa fa-search"></i>
             </div></form></li>
             <li><a href="movie.html">MOVIES</a></li>
@@ -36,7 +40,7 @@
             <li><a href="actor.html">ACTORS</a></li>
             <li class="user">USERNAME</li>
             <li id="myWatchlist" onclick="menuWatchlistOnOff()">MY WATCHLIST <i class="fa fa-chevron-circle-down"></i></li>
-            <li class="logout"><a href="login.html">LOG<br>OUT<a/></li>
+            <li class="logout"> <a href="login.html">LOG<br>OUT</a> </li>
             <li class="settings"><i class="fa fa-cog"></i></li>
         </ul>
     </nav>
@@ -51,6 +55,232 @@
         </ul>
     </nav>
 </div>
-<div id="movieContent">Contenu de la page ici</div>
+
+<div id="indexContent" class="container">
+    <!--News-->
+    <div id="news">
+        <h1 class="col-md-12">News<br></h1>
+    </div>
+    <br>
+    <div class="col-md-12">
+        <div id="carousel-1" class="carousel slide" data-ride="carousel">
+            <!-- balls-->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-1" data-slide-to="1"></li>
+                <li data-target="#carousel-1" data-slide-to="2"></li>
+                <li data-target="#carousel-1" data-slide-to="3"></li>
+            </ol>
+            <!-- Slide containers-->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active"> <!--poner active-->
+                    <img src="img/FACES-OF-THE-REVOLUTION.jpg" class="img-responsive" alt="">
+                    <div class="carousel-caption">
+                        <h2>Coming soon</h2>
+                        <p>
+                            After being symbolized as the "Mockingjay", Katniss Everdeen and District 13 engage in an
+                            all-out revolution against the autocratic Capitol.
+                            Coming Soon: In theaters November 20.
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/chewbacca-han-solo.jpg" class="img-responsive" alt="">
+                    <!--<a href="http://www.bbc.com/news/entertainment-arts-33439026.com"></a>-->
+                    <div class="carousel-caption">
+                        <h2>Star Wars: Han Solo origin film announced</h2>
+                        <p>
+                            A Star Wars spin-off film will tell the back story of space smuggler Han Solo, Disney has announced.
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/grimm.png" class="img-responsive" alt="">
+                    <div class="carousel-caption">
+                        <h2>Grimm returns on Friday, October 30 at 9pm on NBC</h2>
+                        <p>
+                            The panel with retrospective video of Season 4. In the Season 4 finale, Nick (David Giuntoli) lost
+                            his mother, received her head in the mail, then watched Juliette (Bitsie Tulloch) -- his longtime romantic
+                            interest turned hexenbiest -- die in his arms after getting shot by fellow Grimm Trubel (Jacqueline Toboni).<br>
+                            Ref : "http://www.tvguide.com"
+
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/gameofthrones_jonsnow_deadfinale.jpg" class="img-responsive" alt="">
+                    <a href="http://www.cinemablend.com/television/Whether-Or-Jon-Snow-Dead-According-Emilia-Clarke-72697.html"></a>
+                    <div class="carousel-caption">
+                        <h2>Dead or not dead that is the question</h2>
+                        <p>
+                            The Game of Thrones Season 5 finale aired on HBO just a short time ago, leaving viewers with a huge cliffhanger related
+                            to none other than Jon Snow. When last we saw our beleaguered hero, he was lured out of camp and stabbed by a slew of
+                            members of the Night’s Watch. When last we left him,he had fallen to the ground and was covered in blood, staring at the
+                            sky. In fact,he looked pretty damn dead, but recently actress Emilia Clarke says there’s more hope for Jon Snow than may
+                            meet the eye.<br>Ref :"http://www.cinemablend.com"
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!--Controles-->
+            <a href="#carousel-1" class="left carousel-control" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Back</span>
+            </a>
+            <a href="#carousel-1" class="right carousel-control" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </div>
+    <!--Recently Added-->
+    <div id="recently-added">
+        <h1 class="col-md-12">Recently added<br></h1>
+    </div>
+    <br>
+    <div class="col-md-12">
+        <div id="carousel-2" class="carousel slide" data-ride="carousel">
+            <!-- balls-->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-2" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-2" data-slide-to="1"></li>
+                <li data-target="#carousel-2" data-slide-to="2"></li>
+                <li data-target="#carousel-2" data-slide-to="3"></li>
+            </ol>
+            <!-- Slide containers-->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active"> <!--poner active-->
+                    <img src="img/sense-8.jpg" class="img-responsive" alt="">
+                    <div class="carousel-caption">
+                        <h2>Available Now!!</h2>
+                        <p>
+                            Sense8 (a play on the word sensate /ˈsɛnseɪt/, meaning aware)[6] is an American science fiction drama web
+                            television series created, written and executive-produced by Andy and Lana Wachowski and J. Michael Straczynski.
+                            The first season, consisting of 12 episodes, became available for streaming on Netflix on June 5, 2015.
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/maxresdefault.jpg" class="img-responsive" alt="">
+                    <!--<a href="http://www.bbc.com/news/entertainment-arts-33439026.com"></a>-->
+                    <div class="carousel-caption">
+                        <h2>Finally the season 5 of game of thrones has arrived</h2>
+                        <p>
+                            Who will die this time?
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/exodus-gods-and-kings-1920.jpg" class="img-responsive" alt="">
+                    <div class="carousel-caption">
+                        <h2>Exodus: Gods and Kings</h2>
+                        <p>
+                            Legendary director Ridley Scott (Alien, Gladiator) goes Old Testament in this epic, effects-filled
+                            retelling of the story of Moses
+
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/unbroken-1920.jpg" class="img-responsive" alt="">
+                    <div class="carousel-caption">
+                        <h2>Unbroken</h2>
+                        <p>
+                            Angelina Jolie directed this inspiring true story of survival and redemption. Jack O’Connell stars as
+                            Louis Zamperini, an Olympic runner who became a U.S. Air Force bombardier and spent 47 days lost at
+                            sea and more than two years as a prisoner of the Japanese military during WWII.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!--Controles-->
+            <a href="#carousel-2" class="left carousel-control" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Back</span>
+            </a>
+            <a href="#carousel-2" class="right carousel-control" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </div>
+    <div id="recently-viewed">
+        <h1 class="col-md-12">Recently viewed<br></h1>
+    </div>
+    <br>
+    <div class="col-md-12">
+        <div id="carousel-3" class="carousel slide" data-ride="carousel">
+            <!-- balls-->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-3" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-3" data-slide-to="1"></li>
+                <li data-target="#carousel-3" data-slide-to="2"></li>
+                <li data-target="#carousel-3" data-slide-to="3"></li>
+            </ol>
+            <!-- Slide containers-->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active"> <!--poner active-->
+                    <img src="img/INTERSTELAR.png" class="img-responsive" alt="">
+                    <div class="carousel-caption">
+                        <h2>DO YOU WANT TO WATCH IT AGAIN?</h2>
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/the-dark-knight-rises-2012-movie.jpg" class="img-responsive" alt="">
+                    <!--<a href="http://www.bbc.com/news/entertainment-arts-33439026.com"></a>-->
+                    <div class="carousel-caption">
+                        <h2>DO YOU WANT TO WATCH IT AGAIN?</h2>
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/Cosmos.jpg" class="img-responsive" alt="">
+                    <div class="carousel-caption">
+                        <h2>COSMOS A SPACETIME ODYSSEY</h2>
+                        <p>
+                            Season 1-Episode 9
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/season-5-walking-dead-promo-poster.jpg" class="img-responsive" alt="">
+                    <div class="carousel-caption">
+                        <h2></h2>
+                        <p>
+                            Season 5-Episode 5
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!--Controles-->
+            <a href="#carousel-3" class="left carousel-control" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Back</span>
+            </a>
+            <a href="#carousel-3" class="right carousel-control" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

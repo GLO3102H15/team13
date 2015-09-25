@@ -13,6 +13,7 @@ body{
 
 
 #miniBar {
+    z-index: 1;
     background: rgba(20, 20, 20, 0.50);
     height: 47px;
     position: fixed;
@@ -82,6 +83,7 @@ body{
 }
 
 #miniMenu{
+    z-index: 1;
     margin-top: 47px;
     width: 100%;
     background: #16A79D;
@@ -119,6 +121,7 @@ body{
 }
 
 #menu{
+    z-index: 1;
     background: rgba(20, 20, 20, 0.50);
     height: 80px;
     width:100%;
@@ -269,6 +272,7 @@ body{
 }
 
 #myWatchlistMenu{
+    z-index: 1;
     display: none;
     background-color: #16A79D;
     width: 165px;
@@ -303,9 +307,82 @@ body{
     text-align: center;
 }
 
+
 #movieContent img{
     width: 80%;
+
 }
+#indexContent{
+    width: 100%;
+    height: 100%;
+    margin: 10px 10px 10px 10px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    text-align: justify;
+}
+#movieContent{
+    margin-top: 50px ;
+    margin-outside: 100px;
+    font-size: 36px;
+    width: 100%;
+    font-style: oblique;
+    font-family: 'Roboto';
+}
+
+#news h1{
+    margin-top: 50px;
+    font-size: 36px;
+    width: 100%;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}
+#indexContent{
+    margin-top:100px;
+    width: 90%;
+    color: #ffffff;
+    font-style: oblique;
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+
+}
+#indexContent img{
+
+    width: 1600px;
+    height: 500px;
+    display: block;
+    position: relative;
+
+
+}
+
+#indexContent h2{
+    font-size: 36px;
+}
+#indexContent p{
+    font-size: 20px;
+}
+#recently-added h1{
+    margin-top: 30px;
+    font-size: 36px;
+    width: 100%;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}
+
+#recently-viewed h1{
+    margin-top: 30px;
+    font-size: 36px;
+    width: 100%;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+
+}
+
+
 /* Responsive pour moins de 1020px */
 @media screen and (min-width:1021px) {
 
@@ -314,6 +391,7 @@ body{
     }
 }
 /* Responsive pour moins de 1020px */
+
 @media screen and (max-width:1020px) and (min-width: 849px){
     #miniBar {
         display: none;
@@ -332,6 +410,7 @@ body{
     }
 
     #menu{
+        z-index: 1;
         height: 40px;
         border-top: none;
         -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
@@ -403,6 +482,42 @@ body{
         font-size: 28px;
         font-family: 'Roboto', sans-serif;
     }
+
+    #news h1{
+        margin-top: 80px;
+        font-size: 32px;
+        width: 100%;
+    }
+    #indexContent {
+        margin-top: 0px;
+    }
+
+    #indexContent img{
+
+        width: 100%;
+        height: 100%;
+    }
+
+    #indexContent h2{
+        font-size: 32px;
+        width: 100%;
+    }
+    #indexContent p{
+        font-size: 16px;
+    }
+
+    #recently-added h1{
+        margin-top: 40px;
+        font-size: 32px;
+        width: 100%;
+    }
+    #recently-viewed h1{
+        margin-top: 40px;
+        font-size: 32px;
+        width: 100%;
+    }
+
+
 }
 
 /* Responsive pour moins de 850px */
@@ -416,6 +531,10 @@ body{
 
     #miniBar .searchBox{
         display: block;
+    }
+
+    #myWatchlistMenu{
+        visibility: hidden;
     }
 
     #miniMenu {
@@ -434,9 +553,49 @@ body{
         font-family: 'Roboto', sans-serif;
     }
 
-    #myWatchlistMenu {
-        visibility: hidden;
+    #movieContent{
+        width: 100%;
+        height: 100%;
+        margin: 50px 14px 0px 14px;
+        font-size: 28px;
+        font-family: 'Roboto', sans-serif;
     }
+    #indexContent {
+        margin-top: -10px;
+    }
+
+    #news h1{
+        margin-top: 80px;
+        font-size: 18px;
+        width: 100%;
+    }
+
+    #indexContent img{
+
+        width: 100%;
+        height: 100%;
+    }
+
+    #indexContent h2{
+        font-size: 14px;
+        width: 100%;
+    }
+    #indexContent p{
+        font-size: 8px;
+
+    }
+    #recently-added h1{
+        margin-top: 20px;
+        font-size: 18px;
+        width: 100%;
+    }
+    #recently-viewed h1{
+        margin-top: 20px;
+        font-size: 18px;
+        width: 100%;
+    }
+
+
 }
 
 /* CSS ACTOR.HTML */
