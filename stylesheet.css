@@ -599,6 +599,14 @@ body{
 }
 
 /* ACTOR DETAIL */
+.container{
+    width:80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    /*text-align: center !important;*/
+    margin-top: 100px;
+}
+
 .filmographie{
     margin-top: 20px;
     padding: 20px;
@@ -611,7 +619,7 @@ body{
 .col-3{
     width: 33.1%;
     margin: 10px 0px;
-    display: table-cell;
+    display: inline-block;
     border-radius: 10px;
 }
 .review{
@@ -632,7 +640,10 @@ body{
     display: inline-block;
 }
 .review .info{
-    padding-left: 90px;
+    width: 200px;
+    position: relative;
+    left:50%;
+    margin-left:-100px;
     line-height: 25px;}
 .review .titre{
     text-decoration: underline;
@@ -649,12 +660,24 @@ body{
 .col-7{
     width: 66.5%;
     margin: 10px 0px;
-    padding: 20px;
-    display: table-cell;
+    padding: 20px 0px;
+    display: inline-block;
     border-radius: 10px;
     vertical-align: top;
 
 }
+.col-7 p {
+    text-align: justify;
+}
+.col-7 button {
+    background: #444349;
+    border: 1px solid #16A79D; 
+    color: #16A79D;
+    float:right;
+    height:30px;
+    cursor: pointer;
+}
+.col-7 button img{height:15px; padding-right:5px;float:left;}
 .container .titre-principal {
     font-weight: bold;
     font-size: 2em;
@@ -664,4 +687,38 @@ body{
     font-size: 1em;
     font-weight: bold;
     color: #16A79D;
+}
+.itunes{
+    z-index: 9999;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    background-color: #16A79D;
+    position: fixed;
+    right: 0px;
+    top:200px;
+    color:#fff;
+    line-height: 80px;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.itunes span {margin-left: 5px;}
+.itunes img{
+    width:60px;
+    height:60px;
+    margin-top:10px;
+    margin-left: 10px;
+    float: left;
+}
+.filmographie ul{
+    padding-left: 0px;
+} 
+.filmographie li {
+    display: block;
+    border: 1px solid black;
+    margin-bottom: 5px;
+    padding:5px;
+}
+.filmographie li img {
+    width:150px;
 }

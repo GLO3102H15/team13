@@ -52,6 +52,7 @@
     </nav>
 </div>
 <div class="container">
+    <div class="itunes"><img src="img/iTunes.png"> <span> Accéder à iTunes</span></div>
     <div class="titre-principal">Robert Downey Jr</div>
     <div class="col-3 review">
         <img class="img-actor" src="img/robert.jpg"></img>
@@ -66,13 +67,16 @@
         <span class="bio">Biographie</span>
         <p>Robert Downey Jr, aka Robert pour les intimes est un peu le Steve Jobs du cinéma. Il l'a révolutionné sans forcement mettre de valeur ajouté. Les jaloux diront qu'il est égocentrique, playboy, philantrope, tout comme le personne de Tony Stark qu'il enrôle à merveille.
         (oui oui je suis inspiré)</p>
+        <form method="get" action="https://itunes.apple.com/ca/artist/robert-downey-jr./id283824933?l=fr" target="_blank">
+            <button type="submit"><img src="img/iTunes.png"/>Continuer sur l'iTunes Store</button>
+        </form>
     </div>
     <div class="filmographie">
         <div class="films">
             <span class="titre">Films notoires</span>
             <div class="liste">
                 <ul>
-                    <li>Iron Man 3 (2014)</li>
+                    <li><img src="img/ironman1.jpeg"/>Iron Man 3 (2014)</li>
                     <li>Iron Man 3</li>
                     <li>Iron Man 3</li>
                     <li>Iron Man 3</li>
@@ -92,7 +96,15 @@
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-
+            $('.itunes').mouseover(function(){
+                $(this).animate({width:"220px"},500);
+            });
+            $('.itunes').mouseleave(function(){
+                $(this).animate({width:"80px"},500);
+            });
+            $('.itunes').click(function(){
+                window.open('https://itunes.apple.com/ca/artist/robert-downey-jr./id283824933?l=fr','_blank');
+            });
         });
     </script>
 </body>
