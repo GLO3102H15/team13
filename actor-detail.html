@@ -56,27 +56,38 @@
     <div class="titre-principal">Robert Downey Jr</div>
     <div class="col-3 review">
         <img class="img-actor" src="img/robert.jpg"></img>
+        <!--
         <div class="info">
-            <div><span class="titre">Age : </span><span class="info-text">37 ans</span></div>
+            <div><span class="titre">Age : </span><span class="info-text">50</span></div>
             <div><span class="titre">Taille : </span><span class="info-text">1m90</span></div>
-            <div><span class="titre">Statut : </span><span class="info-text">Célibataire</span></div>
+            <div><span class="titre">Statut : </span><span class="info-text">Single</span></div>
             <div><span class="titre">Note : </span><span class="info-text">3/5 (234 avis)</span></div>
         </div>
+    -->
     </div>
     <div class="col-7">
-        <span class="bio">Biographie</span>
-        <p>Robert Downey Jr, aka Robert pour les intimes est un peu le Steve Jobs du cinéma. Il l'a révolutionné sans forcement mettre de valeur ajouté. Les jaloux diront qu'il est égocentrique, playboy, philantrope, tout comme le personne de Tony Stark qu'il enrôle à merveille.
-        (oui oui je suis inspiré)</p>
+        <span class="bio">Biography</span>
+        <p>Robert John Downey, Jr. (born April 4, 1965)[1] is an American actor whose career has included critical and popular success in his youth, followed by a period of substance abuse and legal troubles, and a resurgence of commercial success in middle age.
+
+Making his screen debut at the age of five, appearing in his father Robert Downey, Sr's film Pound (1970), he appeared in roles associated with the Brat Pack, such as the teen sci-fi comedy Weird Science (1985) and the drama Less Than Zero (1987). Other films he has starred in include the action comedy Air America (1990), the comedy Soapdish (1991), and the crime film Natural Born Killers (1994). He starred as Charlie Chaplin, the title character in the 1992 film Chaplin, which earned him a nomination for the Academy Award for Best Actor.</p>
         <form method="get" action="https://itunes.apple.com/ca/artist/robert-downey-jr./id283824933?l=fr" target="_blank">
             <button type="submit"><img src="img/iTunes.png"/>Continuer sur l'iTunes Store</button>
         </form>
     </div>
     <div class="filmographie">
         <div class="films">
-            <span class="titre">Films notoires</span>
+            <span class="titre">Movies</span>
             <div class="liste">
                 <ul>
-                    <li><img src="img/ironman1.jpeg"/>Iron Man 3 (2014)</li>
+                    <li><img src="img/ironman1.jpeg"/>
+                        <div class="description">
+                            <span class="titre">Iron Man 3 (2014)</span>
+                            <p class="short-desc">Iron Man 3 (stylized onscreen as Iron Man Three) is a 2013 superhero film featuring the Marvel Comics character Iron Man, produced by Marvel</p>
+                            <span class="link">Afficher le Trailer</span>
+                            <span class="hide-link">Cacher le Trailer</span>
+                        </div>
+                        <iframe src="https://www.youtube.com/embed/8hYlB38asDY" frameborder="0" allowfullscreen></iframe>
+                    </li>
                     <li>Iron Man 3</li>
                     <li>Iron Man 3</li>
                     <li>Iron Man 3</li>
@@ -84,7 +95,7 @@
             </div>
         </div>
         <div class="serie">
-            <span class="titre">Série</span>
+            <span class="titre">TV Shows</span>
             <div class="liste">
                 <ul>
                     <li>Pas d'info</li>
@@ -104,6 +115,16 @@
             });
             $('.itunes').click(function(){
                 window.open('https://itunes.apple.com/ca/artist/robert-downey-jr./id283824933?l=fr','_blank');
+            });
+            $('.link').click(function(){
+                $(this).hide();
+                $(this).parent().find('.hide-link').show();
+                $(this).parent().parent().children('iframe').show();
+            });
+            $('.hide-link').click(function(){
+                $(this).hide();
+                $(this).parent().find('.link').show();
+                $(this).parent().parent().children('iframe').hide();
             });
         });
     </script>

@@ -683,7 +683,7 @@ body{
     font-size: 2em;
     color:#fff;
 }
-.filmographie .titre {
+.filmographie .films > .titre, .filmographie .serie > .titre {
     font-size: 1em;
     font-weight: bold;
     color: #16A79D;
@@ -720,5 +720,39 @@ body{
     padding:5px;
 }
 .filmographie li img {
-    width:150px;
+    display: inline-block;
+    width:20%;
+}
+.filmographie .liste iframe{
+    margin-top: 15px;
+    padding-top: 15px;
+    width: 100%;
+    height: 55%;
+    display: none;
+}
+.filmographie .liste .link, .filmographie .liste .hide-link {
+    color: #16A79D;
+    font-weight: 500;
+    border: 1px solid #16A79D;
+    float:right;
+    cursor: pointer;
+    padding: 5px;
+}
+.filmographie .liste .hide-link{ 
+display: none;
+}
+.filmographie .liste .description {
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+}
+.filmographie .liste .description .titre {
+    display: block;
+    font-weight: 500;
+    width: 100%;
+
+}
+.filmographie .liste .description .short-desc {
+    display: block;
+    
 }
