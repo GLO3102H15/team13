@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="menu.js"></script>
+    <title>UMovie - Movies</title>
+</head>
+
+
+<body>
+<div id="miniBar"><div class="controlMenu" onclick="menuOnOff()"><i class="fa fa-bars"></i></div>
+    <form><input class="searchBox" type="text" placeholder="Search..." required><div class="searchIcon"><i class="fa fa-search"></i>
+    </div></form></div>
+<div id="miniMenu">
+    <nav>
+        <ul>
+            <a href="index.html"><li>HOME</li></a>
+            <a href="movie.html"><li>MOVIES</li></a>
+            <a href="tvshow.html"><li>TV SHOWS</li></a>
+            <a href="actor.html"><li>ACTORS</li></a>
+            <li>SETTINGS</li>
+            <a href="login.html"><li class="logout">LOG-OUT</li></a>
+        </ul>
+    </nav>
+</div>
+<div id="menu">
+    <nav>
+        <ul>
+            <li class="goHome"><a href="index.html">U<i class="fa fa-ticket"></i>M<a/></li>
+            <li class="chercher"><form><input class="searchBox" type="text" placeholder="Search..." required><div class="searchIcon"><i class="fa fa-search"></i>
+            </div></form></li>
+            <li class="chosen">MOVIES</li>
+            <li><a href="tvshow.html">TV SHOWS</a></li>
+            <li><a href="actor.html">ACTORS</a></li>
+            <li class="user">USERNAME</li>
+            <li id="myWatchlist" onclick="menuWatchlistOnOff()">MY WATCHLIST <i class="fa fa-chevron-circle-down"></i></li>
+            <li class="logout"><a href="login.html">LOG<br>OUT<a/></li>
+            <li class="settings"><i class="fa fa-cog"></i></li>
+        </ul>
+    </nav>
+</div>
+<div id="myWatchlistMenu" onclick="menuWatchlistOnOff()">
+    <nav>
+        <ul>
+            <li>Example 1</li>
+            <li>Example 2</li>
+            <li>Example 3</li>
+            <li>Example 4</li>
+        </ul>
+    </nav>
+</div>
+
+
+<!Contenu-->
+<div class="container">
+    <div class="itunes"><img src="img/iTunes.png"> <span> Accéder à iTunes</span></div>
+    <div class="titre-principal">Pulp Fiction</div>
+    <div class="col-3 review">
+        <img class="img-actor" src="img/PF.jpg">
+    </div>
+    <div class="col-7">
+        <span class="bio">Movie Info</span><br>
+        <span class="gender">Gender</span> : <span class="gender-link">Thriller</span><br>
+        <span class="gender">Release year</span> : <span class="gender-link">1994</span><br>
+        <span class="gender">Duration</span> : <span class="gender-link">140 min</span><br>
+        <span class="gender">Ratings</span> : <span class="gender-link"> Mature 18+</span><br>
+        <p>
+            Outrageously violent, time-twisting, and in love with language, Pulp Fiction was widely considered the most influential
+            American movie of the 1990s.<br> Director and co-screenwriter Quentin Tarantino synthesized such seemingly disparate traditions
+            as the syncopated language of David Mamet; the serious violence of American gangster movies, crime movies, and films noirs
+            mixed up with the wacky violence of cartoons, video games, and Japanese animation; and the fragmented story-telling
+            structures of such experimental classics as Citizen Kane, Rashomon, and La jetée.<br>
+            The Oscar-winning script by Tarantino and Roger Avary intertwines three stories, featuring Samuel L. Jackson and John Travolta, in the role that single-handedly
+            reignited his career, as hit men who have philosophical interchanges on such topics as the French names for American fast
+            food products; Bruce Willis as a boxer out of a 1940s B-movie; and such other stalwarts as Harvey Keitel, Tim Roth,
+            Christopher Walken, Eric Stoltz, Ving Rhames, and Uma Thurman, whose dance sequence with Travolta proved an instant classic.
+            ~ Leo Charney, Rovi
+        </p>
+
+        <form method="get" action="https://geo.itunes.apple.com/us/movie/pulp-fiction/id463252252?mt=6" target="_blank">
+            <button type="submit"><img src="img/iTunes.png"/>Continuer sur l'iTunes Store</button>
+        </form>
+    </div>
+    <div class="filmographie">
+        <div class="films">
+            <div class="liste">
+                <ul>
+                    <li>
+                        <div class="description movie-trailer">
+                            <span class="link">Afficher le Trailer</span>
+                            <span class="hide-link">Cacher le Trailer</span>
+                        </div>
+                        <iframe src="https://www.youtube.com/embed/ewlwcEBTvcg" frameborder="0" allowfullscreen></iframe>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.itunes').mouseover(function(){
+            $(this).animate({width:"220px"},500);
+        });
+        $('.itunes').mouseleave(function(){
+            $(this).animate({width:"80px"},500);
+        });
+        $('.itunes').click(function(){
+            window.open('https://geo.itunes.apple.com/us/movie/pulp-fiction/id463252252?mt=6','_blank');
+        });
+        $('.link').click(function(){
+            $(this).hide();
+            $(this).parent().find('.hide-link').show();
+            $(this).parent().parent().children('iframe').slideDown();
+        });
+        $('.hide-link').click(function(){
+            $(this).hide();
+            $(this).parent().find('.link').show();
+            $(this).parent().parent().children('iframe').slideUp();
+        });
+    });
+</script>
+</body>
+</html>

@@ -411,7 +411,11 @@ body{
 }
 .box a{ text-align:center;text-decoration: none; font-weight: bold;}
 .box .info{
-    opacity: 0.6;
+    opacity: 0.7;
+    font-weight: 300;
+}
+.box .nom{
+    font-weight: 500;
 }
 .box .shadow{
     display: none;

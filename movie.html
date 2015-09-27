@@ -57,74 +57,48 @@
 
 <!Contenu-->
 <div class="container">
-    <div class="itunes"><img src="img/iTunes.png"> <span> Accéder à iTunes</span></div>
-    <div class="titre-principal">Pulp Fiction</div>
-    <div class="col-3 review">
-        <img class="img-actor" src="img/PF.jpg">
-    </div>
-    <div class="col-7">
-        <span class="bio">Movie Info</span><br>
-        <span class="gender">Gender</span> : <span class="gender-link">Thriller</span><br>
-        <span class="gender">Release year</span> : <span class="gender-link">1994</span><br>
-        <span class="gender">Duration</span> : <span class="gender-link">140 min</span><br>
-        <span class="gender">Ratings</span> : <span class="gender-link"> Mature 18+</span><br>
-        <p>
-            Outrageously violent, time-twisting, and in love with language, Pulp Fiction was widely considered the most influential
-            American movie of the 1990s.<br> Director and co-screenwriter Quentin Tarantino synthesized such seemingly disparate traditions
-            as the syncopated language of David Mamet; the serious violence of American gangster movies, crime movies, and films noirs
-            mixed up with the wacky violence of cartoons, video games, and Japanese animation; and the fragmented story-telling
-            structures of such experimental classics as Citizen Kane, Rashomon, and La jetée.<br>
-            The Oscar-winning script by Tarantino and Roger Avary intertwines three stories, featuring Samuel L. Jackson and John Travolta, in the role that single-handedly
-            reignited his career, as hit men who have philosophical interchanges on such topics as the French names for American fast
-            food products; Bruce Willis as a boxer out of a 1940s B-movie; and such other stalwarts as Harvey Keitel, Tim Roth,
-            Christopher Walken, Eric Stoltz, Ving Rhames, and Uma Thurman, whose dance sequence with Travolta proved an instant classic.
-            ~ Leo Charney, Rovi
-        </p>
-
-        <form method="get" action="https://geo.itunes.apple.com/us/movie/pulp-fiction/id463252252?mt=6" target="_blank">
-            <button type="submit"><img src="img/iTunes.png"/>Continuer sur l'iTunes Store</button>
-        </form>
-    </div>
-    <div class="filmographie">
-        <div class="films">
-            <div class="liste">
-                <ul>
-                    <li>
-                        <div class="description movie-trailer">
-                            <span class="link">Afficher le Trailer</span>
-                            <span class="hide-link">Cacher le Trailer</span>
-                        </div>
-                        <iframe src="https://www.youtube.com/embed/ewlwcEBTvcg" frameborder="0" allowfullscreen></iframe>
-                    </li>
-
-                </ul>
-            </div>
+    <div class="list-box">
+        <div class="box">
+            <img class="img-actor" src="img/PF.jpg"></img>
+            <div class="shadow"><a href="movie-detail.html">Voir</a></div>
+            <span class="nom">Pulp Fiction</span>
+            <span class="info">Thriller - 1994</span>
+        </div>
+        <div class="box">
+            <img class="img-actor" src="img/PF.jpg"></img>
+            <div class="shadow"><a href="movie-detail.html">Voir</a></div>
+            <span class="nom">Pulp Fiction</span>
+            <span class="info">Thriller - 1994</span>
+        </div>
+        <div class="box">
+            <img class="img-actor" src="img/PF.jpg"></img>
+            <div class="shadow"><a href="movie-detail.html">Voir</a></div>
+            <span class="nom">Pulp Fiction</span>
+            <span class="info">Thriller - 1994</span>
+        </div>
+        <div class="box">
+            <img class="img-actor" src="img/PF.jpg"></img>
+            <div class="shadow"><a href="movie-detail.html">Voir</a></div>
+            <span class="nom">Pulp Fiction</span>
+            <span class="info">Thriller - 1994</span>
         </div>
     </div>
 </div>
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-        $('.itunes').mouseover(function(){
-            $(this).animate({width:"220px"},500);
+
+        $('.img-actor').mouseover(function(){
+            $('.shadow').css("display","none");
+            $(this).parent().find('.shadow').css("display","block");
         });
-        $('.itunes').mouseleave(function(){
-            $(this).animate({width:"80px"},500);
+
+        $('.shadow').mouseleave(function(){
+            $(this).css("display","none");
         });
-        $('.itunes').click(function(){
-            window.open('https://geo.itunes.apple.com/us/movie/pulp-fiction/id463252252?mt=6','_blank');
-        });
-        $('.link').click(function(){
-            $(this).hide();
-            $(this).parent().find('.hide-link').show();
-            $(this).parent().parent().children('iframe').slideDown();
-        });
-        $('.hide-link').click(function(){
-            $(this).hide();
-            $(this).parent().find('.link').show();
-            $(this).parent().parent().children('iframe').slideUp();
-        });
+
     });
 </script>
+    
 </body>
 </html>
