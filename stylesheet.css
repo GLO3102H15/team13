@@ -404,10 +404,11 @@ body{
     width:150px;
     height:212px;
 }
-.box span{
+.box a, .box span{
     display:block;
     color : #fff;
 }
+.box a{ text-align:center;text-decoration: none; font-weight: bold;}
 .box .info{
     opacity: 0.6;
 }
