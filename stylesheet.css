@@ -587,7 +587,54 @@ display: none;
     display: block;
 }
 /*  FIN ACTOR DETAIL */
-
+/* TVSHOW*/
+    .saison-list{
+        padding: 20px 5%;
+        width: 90%;
+        background-color: #bdc3c7;
+        border-radius: 10px;
+        vertical-align: top;   
+    }
+    .saison{display: block;width: 100%; border: 1px black solid; margin-bottom: 5px;}
+    .saison button{
+        cursor: pointer;
+        background-color: #bdc3c7;;
+        color: #16A79D;
+        border : 1px solid #16A79D;
+        margin: 5px;
+        width: 40px;
+        height: 40px;
+        font-size: 100%;
+    }
+    .saison .btn-minus, .saison .preview{display:none;}
+    .saison .episode{
+        display:none;
+        margin: 10px 15px;}
+    .saison .preview {
+        width: 90%;
+        margin: 5%;
+    }
+    .saison .preview iframe{
+        width: 100%;
+    }
+    .saison .trailer{font-size: 12px; cursor: pointer}
+    .saison .trailer:hover{color:#16A79D;}
+    .saison .episode div{
+        display: inline-block;
+        margin: 5px;
+        padding: 5px;
+        width: 120px !important;
+        border: 1px solid black;
+        line-height: 25px;
+    }
+    .saison .episode div i{
+        padding-left: 5px;
+    }
+    .saison .episode div i:first-child:hover{
+        color:#16A79D;
+        cursor:pointer;
+    }
+/* FIN TVSHOW*/
 .movie-trailer{width: 100% !important; min-height: 30px;}
 .movie-trailer .link, .movie-trailer .hide-link{text-align: center; width:200px; position: absolute;left:50%; margin-left: -100px;}
 

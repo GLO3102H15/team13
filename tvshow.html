@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="stylesheet.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="menu.js"></script>
-    <title>UMovie - TV Shows</title>
+    <title>UMovie - TVShow</title>
 </head>
 <body>
 <div id="miniBar"><div class="controlMenu" onclick="menuOnOff()"><i class="fa fa-bars"></i></div>
@@ -28,15 +28,15 @@
 <div id="menu">
     <nav>
         <ul>
-            <li class="goHome"><a href="index.html">U<i class="fa fa-ticket"></i>M<a/></li>
+            <li class="goHome"><a href="index.html">U<i class="fa fa-ticket"></i>M</a></li>
             <li class="chercher"><form><input class="searchBox" type="text" placeholder="Search..." required><div class="searchIcon"><i class="fa fa-search"></i>
             </div></form></li>
             <li><a href="movie.html">MOVIES</a></li>
-            <li class="chosen">TV SHOWS</li>
-            <li><a href="actor-detail.html">ACTORS</a></li>
+            <li><a href="tvshow.html">TV SHOWS</a></li>
+            <li class="chosen"><a href="actor.html">ACTORS</a></li>
             <li class="user">USERNAME</li>
             <li id="myWatchlist" onclick="menuWatchlistOnOff()">MY WATCHLIST <i class="fa fa-chevron-circle-down"></i></li>
-            <li class="logout"><a href="login.html">LOG<br>OUT<a/></li>
+            <li class="logout"><a href="login.html">LOG<br>OUT</a></li>
             <li class="settings"><i class="fa fa-cog"></i></li>
         </ul>
     </nav>
@@ -51,6 +51,81 @@
         </ul>
     </nav>
 </div>
-<div id="movieContent">Contenu de la page ici</div>
+<div class="container">
+    <div class="itunes"><img src="img/iTunes.png"> <span> Accéder à iTunes</span></div>
+    <div class="titre-principal">Game of Thrones</div>
+    <div class="col-3 review">
+     <img class="img-actor" src="img/got.jpg">
+    </div>
+    <div class="col-7">
+        <span class="bio">Description</span>
+        <p>Game of Thrones is an American fantasy drama television series created for HBO by showrunners David Benioff and D. B. Weiss. It is an adaptation of A Song of Ice and Fire, George R. R. Martin's series of fantasy novels, the first of which is titled A Game of Thrones. Filmed in a Belfast studio and on location elsewhere in Northern Ireland, Croatia, Iceland, Morocco, Spain, Malta, Scotland, and the United States, it premiered on HBO in the United States on April 17, 2011. The series completed airing its fifth season on June 14, 2015, and has been renewed for a sixth season.</p>
+        <span class="gender">Gender</span> : <span class="gender-link"><a href="#" title="redirect to Action">Action</a>, <a href="#" title="redirect to Sword">Sword</a></span><br/>
+        <span class="gender">No of Season</span> : <span class="gender-link">5</span><br/>
+        <span class="gender">No of Episodes</span> : <span class="gender-link">50</span>
+        <form method="get" action="https://itunes.apple.com/ca/tv-season/game-of-thrones-season-4/id883783479" target="_blank">
+            <button type="submit"><img src="img/iTunes.png"/>Continuer sur l'iTunes Store</button>
+        </form>
+    </div>
+    <div class="saison-list">
+        <div class="saison">
+            <button class="btn-plus"><i class="fa fa-plus"></i></button>
+            <button class="btn-minus"><i class="fa fa-minus"></i></button>
+            <span class="titre">Saison 5 <span class="trailer">( <i class="fa fa-film"></i> Trailer )</span></span>
+            <div class="episode">
+                <div class= id="s05e01">Episode 1 <i class="fa fa-film"></i><i class="fa fa-eye"></i></div>
+                <div id="s05e02">Episode 2 <i class="fa fa-film"></i><i class="fa fa-eye"></i></div>
+                <div id="s05e03">Episode 3 <i class="fa fa-film"></i><i class="fa fa-eye"></i></div>
+                <div id="s05e04">Episode 4 <i class="fa fa-film"></i></div>
+                <div id="s05e05">Episode 5 <i class="fa fa-film"></i></div>
+            </div>
+            <div class="preview">
+                <iframe src="https://www.youtube.com/embed/A0pLbTXPHng" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="saison">
+            <button class="btn-plus"><i class="fa fa-plus"></button></i><span class="titre">Saison 5</span>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.itunes').mouseover(function(){
+                $(this).animate({width:"220px"},500);
+            });
+            $('.itunes').mouseleave(function(){
+                $(this).animate({width:"80px"},500);
+            });
+            $('.itunes').click(function(){
+                window.open('https://itunes.apple.com/ca/artist/robert-downey-jr./id283824933?l=fr','_blank');
+            });
+            $('.link').click(function(){
+                $(this).hide();
+                $(this).parent().find('.hide-link').show();
+                $(this).parent().parent().children('iframe').slideDown();
+            });
+            $('.hide-link').click(function(){
+                $(this).hide();
+                $(this).parent().find('.link').show();
+                $(this).parent().parent().children('iframe').slideUp();
+            });
+            $('.btn-plus').click(function(){
+                $(this).parent().find('.episode').slideDown();
+                $(this).hide();
+                $(this).parent().find('.btn-minus').show();
+            });
+            $('.btn-minus').click(function(){
+                $(this).parent().find('.episode').slideUp();
+                $(this).parent().find('.preview').slideUp();
+                $(this).hide();
+                $(this).parent().find('.btn-plus').show();
+            });
+            $('.trailer').click(function(){
+                $(this).parent().parent().find('.preview').slideToggle();
+        });
+
+        });
+    </script>
 </body>
 </html>

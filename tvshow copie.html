@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="menu.js"></script>
+    <title>UMovie - Movies</title>
+    <style>
+    #nom
+    {
+        margin-left: 40%;
+    }
+    #navlist li
+    {
+        display: inline;
+        padding-left: 20%;
+    }
+    #description
+    {
+        margin: 20px 20px 20px 20px;
+        max-width: 50%;
+        padding-left: 20%;
+    }
+
+    #saisonsTitre {
+        padding-left: 42%; color: bisque;
+    }
+    #saisons {
+        padding-left: 9%;
+    }
+    #saisons li {
+        display: inline;
+        list-style: none; /* nécessaire pour IE7 */
+        color: bisque;
+    }#episodesTitre {
+         padding-left: 42%;
+     }
+    #episodes {
+        padding-left: 9%;
+    }
+    #episodes li {
+        display: inline;
+        list-style: none; /* nécessaire pour IE7 */
+    }
+    .image
+    {
+        padding-left: 40%;
+    }
+    #video
+    {
+        padding-left: 50%;
+    }
+    .myButton {
+        -moz-box-shadow:inset 0px 1px 0px 0px #9fb4f2;
+        -webkit-box-shadow:inset 0px 1px 0px 0px #9fb4f2;
+        box-shadow:inset 0px 1px 0px 0px #9fb4f2;
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e));
+        background:-moz-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+        background:-webkit-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+        background:-o-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+        background:-ms-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+        background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7892c2', endColorstr='#476e9e',GradientType=0);
+        background-color:#7892c2;
+        -moz-border-radius:3px;
+        -webkit-border-radius:3px;
+        border-radius:3px;
+        border:1px solid #4e6096;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:13px;
+        padding:6px 24px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #283966;
+    }
+    .myButton:hover {
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
+        background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+        background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+        background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+        background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+        background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
+        background-color:#476e9e;
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+    }
+
+</style>
+</head>
+<body>
+<div id="miniBar"><div class="controlMenu" onclick="menuOnOff()"><i class="fa fa-bars"></i></div>
+    <form><input class="searchBox" type="text" placeholder="Search..." required><div class="searchIcon"><i class="fa fa-search"></i>
+    </div></form></div>
+<div id="miniMenu">
+    <nav>
+        <ul>
+            <li>MOVIES</li>
+            <li>TV SHOWS</li>
+            <li>ACTORS</li>
+            <li>SETTINGS</li>
+            <li class="logout">LOGOUT</li>
+        </ul>
+    </nav>
+</div>
+<div id="menu">
+    <nav>
+        <ul>
+            <li class="chosen">MOVIES</li>
+            <li><a href="#">TV SHOWS</a></li>
+            <li><a href="#">ACTORS</a></li>
+            <li class="chercher"><form><input class="searchBox" type="text" placeholder="Search..." required><div class="searchIcon"><i class="fa fa-search"></i>
+            </div></form></li>
+            <li class="user">Username</li>
+            <li class="logout">LOG<br>OUT</li>
+            <li class="settings"><i class="fa fa-cog"></i></li>
+        </ul>
+    </nav>
+</div>
+<div id="movieContent">
+    <h1 id="nom">Game of Thrones</h1>
+    <div class="image">
+        <img src="http://static.gamesradar.com/images/sfx/2013/03/Game-of-Thrones-Season-3-Posters-small-tyrion.jpg" alt="couverture">
+    </div>
+    <div class="box1">
+        <ul id="navlist">
+            <li id="dateSortie">2011</li>
+            <li id="genre">Drame</li>
+            <li id="rating">*****</li>
+        </ul>
+    </div>
+    <div id="description">Il y a très longtemps, à une époque oubliée, une force a détruit l'équilibre des saisons. Dans un pays où l'été peut durer plusieurs années et l'hiver toute une vie, des forces sinistres et surnaturelles se pressent aux portes du Royaume des Sept Couronnes. La confrérie de la Garde de Nuit, protégeant le Royaume de toute créature pouvant provenir d'au-delà du Mur protecteur, n'a plus les ressources nécessaires pour assurer la sécurité de tous. Après un été de dix années, un hiver rigoureux s'abat sur le Royaume avec la promesse d'un avenir des plus sombres. Pendant ce temps, complots et rivalités se jouent sur le continent pour s'emparer du Trône de Fer, le symbole du pouvoir absolu.
+    </div>
+    <br/>
+    <div>
+        <h1 id="saisonsTitre">Saisons</h1>
+        <ul id="saisons">
+            <li><a href="#">Saison1</a></li>
+            <li><a href="#">Saison2</a></li>
+            <li><a href="#">Saison3</a></li>
+            <li><a href="#">Saison4</a></li>
+            <li><a href="#">Saison5</a></li>
+        </ul>
+    </div>
+    <div >
+        <h1 id="episodesTitre">Episodes</h1>
+        <ul id="episodes">
+            <li><a href="#">Episode1</a></li>
+            <li><a href="#">Episode2</a></li>
+            <li><a href="#">Episode3</a></li>
+            <li><a href="#">Episode4</a></li>
+            <li><a href="#">Episode5</a></li>
+            <li><a href="#">Episode6</a></li>
+            <li><a href="#">Episode7</a></li>
+            <li><a href="#">Episode8</a></li>
+            <li><a href="#">Episode9</a></li>
+            <li><a href="#">Episode10</a></li>
+        </ul>
+    </div>
+    <a href="https://itunes.apple.com/us/tv-season/game-of-thrones-season-1/id482730236"  class="myButton">Itunes</a>
+<object id="video" width="475" height="381"><param value="http://www.youtube.com/v/xZY43QSx3Fk&showsearch=0&rel=0&fs=1&autoplay=0&amp;ap=%2526fmt%3D18" name="movie" /><param value="window" name="wmode" /><param value="true" name="allowFullScreen" /><embed width="475" height="381" wmode="window" allowfullscreen="true" type="application/x-shockwave-flash" src="http://www.youtube.com/v/xZY43QSx3Fk&showsearch=0&fs=1&rel=0&autoplay=0&amp;ap=%2526fmt%3D18"></embed></object><br /><a href="http://www.youtube.com/watch?v=xZY43QSx3Fk" target="_blank">View on YouTube</a>
+</div>
+</body>
+</html>
