@@ -10,10 +10,9 @@ body{
     outline: 0;
 }
 
-#miniBar, #miniMenu, #menu {z-index: 9999;}
+#miniBar, #miniMenu, #menu {z-index: 9999 !important;}
 
 #miniBar {
-    z-index: 1;
     background: rgba(20, 20, 20, 0.50);
     height: 47px;
     position: fixed;
