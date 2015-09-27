@@ -393,7 +393,7 @@ body{
 .filmographie{
     margin-top: 20px;
     padding: 20px;
-    width: 100;
+    width: 100%;
     background-color: #bdc3c7;
     opacity: 1;
     border-radius: 5px;
@@ -808,4 +808,25 @@ display: none;
     .filmographie .liste .description .titre {
         font-size: 17px;
     }
+}
+
+/* CSS MOVIE.HTML */
+.box-movie{
+    display: inline-block;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box-img{
+    display: inline-block;
+    position: absolute;
+    top: 25%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+.ituneLink{
+
 }
