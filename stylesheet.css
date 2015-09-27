@@ -330,6 +330,8 @@ body{
     font-family: 'Roboto';
 }
 
+/*CSS de Index*/
+
 #news h1{
     margin-top: 50px;
     font-size: 36px;
@@ -381,6 +383,7 @@ body{
     text-align: left;
 
 }
+/*fin CCS index*/
 /* CSS ACTOR.HTML */
 .container{
     width:80%;
@@ -433,8 +436,8 @@ body{
     vertical-align: middle;
     text-align: center;
 }
-
-/* ACTOR DETAIL */
+/* FIN CSS ACTOR.HTML *
+/* CSS ACTOR DETAIL */
 .container{
     width:80%;
     margin-left: 10%;
@@ -582,7 +585,7 @@ display: none;
 .filmographie .liste .description .short-desc {
     display: block;
 }
-
+/*  FIN ACTOR DETAIL */
 
 /* Responsive pour moins de 1020px */
 @media screen and (min-width:1021px) {
@@ -727,7 +730,7 @@ display: none;
         display: none;
     }
     .filmographie .liste .description .titre {
-        font-size: 20px;
+        font-size: 90%;
     }
     .filmographie .liste iframe{
         margin-top: 15px;
@@ -736,6 +739,7 @@ display: none;
         height: 400px;
         display: none;
     }
+
 }
 
 /* Responsive pour moins de 850px */
@@ -826,6 +830,7 @@ display: none;
     .col-7 {width: 71%;}
     .col-7 form{display: block;}
     .titre-principal{padding-left: 10px;}
+
 
     .filmographie .liste iframe{
         margin-top: 10px;
