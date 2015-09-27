@@ -353,8 +353,6 @@ body{
     height: 500px;
     display: block;
     position: relative;
-
-
 }
 
 #indexContent h2{
@@ -445,8 +443,8 @@ body{
 
 .filmographie{
     margin-top: 20px;
-    padding: 20px;
-    width: 100%;
+    padding: 20px 5%;
+    width: 90%;
     background-color: #bdc3c7;
     opacity: 1;
     border-radius: 5px;
@@ -583,6 +581,9 @@ display: none;
     display: block;
 }
 
+
+.movie-trailer{width: 100% !important; min-height: 30px;}
+.movie-trailer .link, .movie-trailer .hide-link{text-align: center; width:200px; position: absolute;left:50%; margin-left: -100px;}
 
 /* Responsive pour moins de 1020px */
 @media screen and (min-width:1021px) {
