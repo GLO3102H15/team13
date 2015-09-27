@@ -28,7 +28,7 @@
 <div id="menu">
     <nav>
         <ul>
-            <li class="goHome"><a href="index.html">U<i class="fa fa-ticket"></i>M<a/></li>
+            <li class="goHome"><a href="index.html">U<i class="fa fa-ticket"></i>M</a></li>
             <li class="chercher"><form><input class="searchBox" type="text" placeholder="Search..." required><div class="searchIcon"><i class="fa fa-search"></i>
             </div></form></li>
             <li><a href="movie.html">MOVIES</a></li>
@@ -36,7 +36,7 @@
             <li class="chosen">ACTORS</li>
             <li class="user">USERNAME</li>
             <li id="myWatchlist" onclick="menuWatchlistOnOff()">MY WATCHLIST <i class="fa fa-chevron-circle-down"></i></li>
-            <li class="logout"><a href="login.html">LOG<br>OUT<a/></li>
+            <li class="logout"><a href="login.html">LOG<br>OUT</a></li>
             <li class="settings"><i class="fa fa-cog"></i></li>
         </ul>
     </nav>
@@ -56,20 +56,13 @@
     <div class="titre-principal">Robert Downey Jr</div>
     <div class="col-3 review">
         <img class="img-actor" src="img/robert.jpg"></img>
-        <!--
-        <div class="info">
-            <div><span class="titre">Age : </span><span class="info-text">50</span></div>
-            <div><span class="titre">Taille : </span><span class="info-text">1m90</span></div>
-            <div><span class="titre">Statut : </span><span class="info-text">Single</span></div>
-            <div><span class="titre">Note : </span><span class="info-text">3/5 (234 avis)</span></div>
-        </div>
-    -->
     </div>
     <div class="col-7">
         <span class="bio">Biography</span>
         <p>Robert John Downey, Jr. (born April 4, 1965)[1] is an American actor whose career has included critical and popular success in his youth, followed by a period of substance abuse and legal troubles, and a resurgence of commercial success in middle age.
 
 Making his screen debut at the age of five, appearing in his father Robert Downey, Sr's film Pound (1970), he appeared in roles associated with the Brat Pack, such as the teen sci-fi comedy Weird Science (1985) and the drama Less Than Zero (1987). Other films he has starred in include the action comedy Air America (1990), the comedy Soapdish (1991), and the crime film Natural Born Killers (1994). He starred as Charlie Chaplin, the title character in the 1992 film Chaplin, which earned him a nomination for the Academy Award for Best Actor.</p>
+        <span class="gender">Gender</span> : <span class="gender-link"><a href="#" title="redirect to Action">Action</a>, <a href="#" title="redirect to Drama">Drama</a></span>
         <form method="get" action="https://itunes.apple.com/ca/artist/robert-downey-jr./id283824933?l=fr" target="_blank">
             <button type="submit"><img src="img/iTunes.png"/>Continuer sur l'iTunes Store</button>
         </form>
@@ -81,15 +74,31 @@ Making his screen debut at the age of five, appearing in his father Robert Downe
                 <ul>
                     <li><img src="img/ironman1.jpeg"/>
                         <div class="description">
-                            <span class="titre">Iron Man 3 (2014)</span>
+                            <span class="titre">Iron Man (2008)</span>
+                            <p class="short-desc">Iron Man is a 2008 American superhero film featuring the Marvel Comics character of the same name, produced by Marvel Studios and distributed by Paramount Pictures.1 It is the first installment in the Marvel Cinematic Universe. The film was directed by Jon Favreau, with a screenplay by Mark Fergus & Hawk Ostby and Art Marcum & Matt Holloway.</p>
+                            <span class="link">Afficher le Trailer</span>
+                            <span class="hide-link">Cacher le Trailer</span>
+                        </div>
+                        <iframe src="https://www.youtube.com/embed/8hYlB38asDY" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li><img src="img/ironman2.jpg"/>
+                        <div class="description">
+                            <span class="titre">Iron Man 2 (2010)</span>
+                            <p class="short-desc">Iron Man 2 is a 2010 American superhero film based on the Marvel Comics character Iron Man, produced by Marvel Studios and distributed by Paramount Pictures.1 It is the sequel to 2008's Iron Man, and is the third installment in the Marvel Cinematic Universe.</p>
+                            <span class="link">Afficher le Trailer</span>
+                            <span class="hide-link">Cacher le Trailer</span>
+                        </div>
+                        <iframe src="https://www.youtube.com/embed/8hYlB38asDY" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li><img src="img/ironman3.jpg"/>
+                        <div class="description">
+                            <span class="titre">Iron Man 3 (2013)</span>
                             <p class="short-desc">Iron Man 3 (stylized onscreen as Iron Man Three) is a 2013 superhero film featuring the Marvel Comics character Iron Man, produced by Marvel</p>
                             <span class="link">Afficher le Trailer</span>
                             <span class="hide-link">Cacher le Trailer</span>
                         </div>
                         <iframe src="https://www.youtube.com/embed/8hYlB38asDY" frameborder="0" allowfullscreen></iframe>
                     </li>
-                    <li>Iron Man 3</li>
-                    <li>Iron Man 3</li>
                     <li>Iron Man 3</li>
                 </ul>
             </div>
@@ -119,12 +128,12 @@ Making his screen debut at the age of five, appearing in his father Robert Downe
             $('.link').click(function(){
                 $(this).hide();
                 $(this).parent().find('.hide-link').show();
-                $(this).parent().parent().children('iframe').show();
+                $(this).parent().parent().children('iframe').slideDown();
             });
             $('.hide-link').click(function(){
                 $(this).hide();
                 $(this).parent().find('.link').show();
-                $(this).parent().parent().children('iframe').hide();
+                $(this).parent().parent().children('iframe').slideUp();
             });
         });
     </script>

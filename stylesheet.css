@@ -381,6 +381,154 @@ body{
     text-align: left;
 
 }
+/* ACTOR DETAIL */
+.container{
+    width:80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    /*text-align: center !important;*/
+    margin-top: 100px;
+}
+
+.filmographie{
+    margin-top: 20px;
+    padding: 20px;
+    width:100;
+    background-color: #bdc3c7;
+    opacity: 1;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.col-3{
+    width: 33.1%;
+    margin: 10px 0px;
+    display: inline-block;
+    border-radius: 10px;
+}
+.review img{
+    width: 200px;
+    position: relative;
+    left:50%;
+    margin-left:-100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.bio {
+    color:#16A79D;
+    font-weight: bold;
+    font-size: 30px;
+}
+.gender{ 
+    text-decoration: underline;
+    font-weight: 400;
+    color:#16A79D;
+}
+.gender-link a{text-decoration: none; color:black;}
+.col-7{
+    width: 62.5%;
+    margin: 10px 0px;
+    padding: 20px 10px;
+    background-color: #bdc3c7;
+    display: inline-block;
+    border-radius: 10px;
+    vertical-align: top;
+
+}
+.col-7 p {
+    text-align: justify;
+}
+.col-7 button {
+    background: #bdc3c7;
+    border: 1px solid #16A79D; 
+    color: #16A79D;
+    float:right;
+    height:30px;
+    cursor: pointer;
+}
+.col-7 button img{height:15px; padding-right:5px;float:left;}
+.col-7 form{
+    display: none;
+}
+.container .titre-principal {
+    font-weight: bold;
+    font-size: 2em;
+    color:#fff;
+}
+.filmographie .films > .titre, .filmographie .serie > .titre {
+   color:#16A79D;
+    font-weight: bold;
+    font-size: 30px;
+}
+.itunes{
+    z-index: 9999;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    background-color: #16A79D;
+    position: fixed;
+    right: 0px;
+    top:200px;
+    color:#fff;
+    line-height: 80px;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.itunes span {margin-left: 5px;}
+.itunes img{
+    width:60px;
+    height:60px;
+    margin-top:10px;
+    margin-left: 10px;
+    float: left;
+}
+.filmographie ul{
+    padding-left: 0px;
+} 
+.filmographie li {
+    display: block;
+    border: 1px solid black;
+    margin-bottom: 5px;
+    padding:5px;
+}
+.filmographie li img {
+    display: inline-block;
+    width:20%;
+}
+.filmographie .liste iframe{
+    margin-top: 15px;
+    padding-top: 15px;
+    width: 100%;
+    height: 55%;
+    display: none;
+}
+.filmographie .liste .link, .filmographie .liste .hide-link {
+    color: #16A79D;
+    font-weight: 500;
+    border: 1px solid #16A79D;
+    float:right;
+    cursor: pointer;
+    padding: 5px;
+}
+.filmographie .liste .hide-link{ 
+display: none;
+}
+.filmographie .liste .description {
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    margin-left: 10px;
+}
+.filmographie .liste .description .titre {
+    display: block;
+    font-weight: 500;
+    width: 100%;
+    font-size: 2vw;
+
+}
+.filmographie .liste .description .short-desc {
+    display: block;
+}
 
 
 /* Responsive pour moins de 1020px */
@@ -517,7 +665,17 @@ body{
         width: 100%;
     }
 
-
+/* actor detail */
+    .container{margin-top: 50px;}
+    .col-7 form{
+        display: block;
+    }
+    .itunes{
+        display: none;
+    }
+    .filmographie .liste .description .titre {
+        font-size: 20px;
+    }
 }
 
 /* Responsive pour moins de 850px */
@@ -594,165 +752,38 @@ body{
         font-size: 18px;
         width: 100%;
     }
-
-
+    /*actor detail*/
+    .container{
+        width:90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        /*text-align: center !important;*/
+        margin-top: 60px;
+    }
+    .itunes {display: none;}
+    .col-3 {width: 25%;}
+    .col-3 img{width: 80%; margin-left: 10%; display: block; position: relative; left: 0px;}
+    .col-7 {width: 71%;}
+    .col-7 form{display: block;}
+    .titre-principal{padding-left: 10px;}
 }
-
-/* ACTOR DETAIL */
-.container{
-    width:80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    /*text-align: center !important;*/
-    margin-top: 100px;
+/* Responsive pour moins de 670px */
+@media screen and (max-width:670px) {
+    .titre-principal{padding-left: 10px; width:100%;}
+    .col-3{ width: 100%;}
+    .col-7 {
+        width: 90%;
+        padding: 20px 5%;
+    }
 }
-
-.filmographie{
-    margin-top: 20px;
-    padding: 20px;
-    width:100;
-    background-color: grey;
-    opacity: 1;
-    border-radius: 5px;
-    text-align: left;
-}
-.col-3{
-    width: 33.1%;
-    margin: 10px 0px;
-    display: inline-block;
-    border-radius: 10px;
-}
-.review{
-
-}
-.review img{
-    width: 200px;
-    position: relative;
-    left:50%;
-    margin-left:-100px;
-    margin-top: 25px;
-    margin-bottom: 10px;
-}
-.review div{
-    display: block;
-}
-.review span{
-    display: inline-block;
-}
-.review .info{
-    width: 200px;
-    position: relative;
-    left:50%;
-    margin-left:-100px;
-    line-height: 25px;}
-.review .titre{
-    text-decoration: underline;
-}
-.review .info-text{
-    font-weight: bold;
-    padding-left: 5px;
-}
-.bio {
-    color:#16A79D;
-    font-weight: bold;
-    font-size: 30px;
-}
-.col-7{
-    width: 66.5%;
-    margin: 10px 0px;
-    padding: 20px 0px;
-    display: inline-block;
-    border-radius: 10px;
-    vertical-align: top;
-
-}
-.col-7 p {
-    text-align: justify;
-}
-.col-7 button {
-    background: #444349;
-    border: 1px solid #16A79D; 
-    color: #16A79D;
-    float:right;
-    height:30px;
-    cursor: pointer;
-}
-.col-7 button img{height:15px; padding-right:5px;float:left;}
-.container .titre-principal {
-    font-weight: bold;
-    font-size: 2em;
-    color:#fff;
-}
-.filmographie .films > .titre, .filmographie .serie > .titre {
-    font-size: 1em;
-    font-weight: bold;
-    color: #16A79D;
-}
-.itunes{
-    z-index: 9999;
-    cursor: pointer;
-    width: 80px;
-    height: 80px;
-    background-color: #16A79D;
-    position: fixed;
-    right: 0px;
-    top:200px;
-    color:#fff;
-    line-height: 80px;
-    vertical-align: middle;
-    overflow: hidden;
-}
-.itunes span {margin-left: 5px;}
-.itunes img{
-    width:60px;
-    height:60px;
-    margin-top:10px;
-    margin-left: 10px;
-    float: left;
-}
-.filmographie ul{
-    padding-left: 0px;
-} 
-.filmographie li {
-    display: block;
-    border: 1px solid black;
-    margin-bottom: 5px;
-    padding:5px;
-}
-.filmographie li img {
-    display: inline-block;
-    width:20%;
-}
-.filmographie .liste iframe{
-    margin-top: 15px;
-    padding-top: 15px;
-    width: 100%;
-    height: 55%;
-    display: none;
-}
-.filmographie .liste .link, .filmographie .liste .hide-link {
-    color: #16A79D;
-    font-weight: 500;
-    border: 1px solid #16A79D;
-    float:right;
-    cursor: pointer;
-    padding: 5px;
-}
-.filmographie .liste .hide-link{ 
-display: none;
-}
-.filmographie .liste .description {
-    display: inline-block;
-    vertical-align: top;
-    width: 70%;
-}
-.filmographie .liste .description .titre {
-    display: block;
-    font-weight: 500;
-    width: 100%;
-
-}
-.filmographie .liste .description .short-desc {
-    display: block;
+/* Responsive pour moins de 500px */
+@media screen and (max-width:500px) {
     
+    .filmographie .liste .description .short-desc {
+        text-align: justify;
+        width: 100%;
+    }
+    .filmographie .liste .description .titre {
+        font-size: 17px;
+    }
 }
