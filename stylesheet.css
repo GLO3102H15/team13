@@ -393,7 +393,7 @@ body{
 .filmographie{
     margin-top: 20px;
     padding: 20px;
-    width:100;
+    width: 100;
     background-color: #bdc3c7;
     opacity: 1;
     border-radius: 5px;
@@ -497,9 +497,9 @@ body{
 }
 .filmographie .liste iframe{
     margin-top: 15px;
-    padding-top: 15px;
-    width: 100%;
-    height: 55%;
+    margin-left: 180px;
+    width: 600px;
+    height: 400px;
     display: none;
 }
 .filmographie .liste .link, .filmographie .liste .hide-link {
@@ -676,6 +676,13 @@ display: none;
     .filmographie .liste .description .titre {
         font-size: 20px;
     }
+    .filmographie .liste iframe{
+        margin-top: 15px;
+        margin-left: 100px;
+        width: 500px;
+        height: 400px;
+        display: none;
+    }
 }
 
 /* Responsive pour moins de 850px */
@@ -766,6 +773,15 @@ display: none;
     .col-7 {width: 71%;}
     .col-7 form{display: block;}
     .titre-principal{padding-left: 10px;}
+
+    .filmographie .liste iframe{
+        margin-top: 10px;
+        margin-left: 50px;
+        width: 450px;
+        height: 350px;
+        display: none;
+    }
+
 }
 /* Responsive pour moins de 670px */
 @media screen and (max-width:670px) {
@@ -774,6 +790,12 @@ display: none;
     .col-7 {
         width: 90%;
         padding: 20px 5%;
+    }
+    .filmographie .liste iframe{
+        margin-top: 15px;
+        width: 250px;
+        height: 200px;
+        display: none;
     }
 }
 /* Responsive pour moins de 500px */
