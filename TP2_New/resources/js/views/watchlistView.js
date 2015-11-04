@@ -11,11 +11,8 @@
         initialize: function() {
             _.bindAll(this, 'render');
             var self = this;
-            this.collection = new WatchlistsCollection();
-            this.collection.fetch({
-                success: function () {
-                    self.render();
-                }
+            this.collection.bind('sync add remove',function(){
+                self.render();
             });
         },
 
@@ -23,7 +20,7 @@
             var self = this;
             $.get('resources/templates/watchlistTemplate.html', function (data) {
                 self.template = _.template(data);
-                self.$el.html(self.template({watchlists : this.collection.toJSON()}));
+                self.$el.html(self.template({watchlists : self.collection.toJSON()}));
             }, 'html');
         },
 
@@ -36,10 +33,8 @@
                 type: 'POST',
                 validate: true
             });
-            //this.render();
             if(!isValid){
-                //$("#error-task").slideDown("fast");
-                console.log('erreur');
+                $("#save-watchlist-error").slideDown("fast");
             }
         }
     });

@@ -47,12 +47,17 @@ $(function(){
 
     app_router.on('route:getWatchlist', function () {
         var menuView = new MenuView();
-        var watchlistView = new WatchlistView();
+
+        var watchlistCollection = new WatchlistsCollection();
+        var watchlistView = new WatchlistView({
+                collection: watchlistCollection
+            });
+        watchlistCollection.fetch();
     });
 
     app_router.on('route:getWatchlistId', function (id) {
         var menuView = new MenuView();
-        var watchlistView = new WatchlistView({id: id});
+        var watchlistIdView = new WatchlistIdView({id: id});
     });
 
     Backbone.history.start(); // Important! Active le routing dans Backbone

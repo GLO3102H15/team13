@@ -3,7 +3,9 @@
  */
 (function(){
     WatchlistModel = Backbone.Model.extend({
+        urlRoot : 'http://localhost:3000/unsecure/watchlists/',
         defaults: {
+            name : '',
             movies : [],
             owner : {
                 email : '',
@@ -13,8 +15,12 @@
             id : ''
         },
         parse: function(response){
-            this.id = response.id;
             return response;
+        },
+        validate: function(attrs){
+            if(!attrs.name || attrs.name === ""){
+                return "Please enter a valid task";
+            }
         }
     });
 })();
