@@ -4,8 +4,10 @@
 $(function(){
     WatchlistsCollection = Backbone.Collection.extend({
         model: WatchlistModel,
+        url : 'http://localhost:3000/unsecure/watchlists',
         parse: function(response){
             return response.watchlists;
         }
     });
 });
+

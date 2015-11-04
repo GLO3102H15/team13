@@ -13,7 +13,8 @@ $(function(){
             "actors/:id"                   : "getActor",          // Route pour afficher les détails d'un acteur
             "tvshows/season/:id"           : "getTvshow",         // Route pour afficher les détails d'un TV show
             "tvshows/season/:id/episodes"  : "getTvshowEpisodes", // Route pour afficher les épisodes d'un TV show
-            "watchlists/:id"               : "getWatchlist"       // Route pour afficher les détails d'une watchlist
+            "watchlists"                   : "getWatchlist",      // Route pour afficher les détails d'une watchlist
+            "watchlists/:id"               : "getWatchlistId"     // Route pour afficher les détails d'une watchlist
         }
     });
 
@@ -44,7 +45,12 @@ $(function(){
         var tvshowViewEpisode = new TvShowViewEpisodes({ id: id});
     });
 
-    app_router.on('route:getWatchlist', function (id) {
+    app_router.on('route:getWatchlist', function () {
+        var menuView = new MenuView();
+        var watchlistView = new WatchlistView();
+    });
+
+    app_router.on('route:getWatchlistId', function (id) {
         var menuView = new MenuView();
         var watchlistView = new WatchlistView({id: id});
     });

@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 id="pagetitle">MY WATCHLISTS</h1>
+            </div>
+
+            <div class="col-xs-12 col-sm-4">
+
+                <button id="new-watchlist-button" type="button" class="btn"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> NEW WATCHLIST</button>
+             </div>
+
+            <div class="col-xs-12 col-sm-8">
+                <div class="input-group">
+                <input id="watchlist-input" type="text" class="form-control" placeholder="Type the name of the new watchlist...">
+                <span class="input-group-btn">
+                    <button id="save-watchlist-button" class="btn" type="button" onclick="">SAVE</button>
+                </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xs-2"></div>
+</div>
+<div>
+    <% _.each(watchlists, function(watchlist){ %>
+    <div class="task col-xs-12 input-group">
+        <p> <%= watchlist.name %></p>
+
+    </div>
+    <hr/>
+    <% }); %>
+</div>
+
+
+<style type="text/css">
+
+    #new-watchlist-button{
+        background-color: #16A79D;
+    }
+    #save-watchlist-button{
+        background-color: #16A79D;
+    }
+
+</style>
+

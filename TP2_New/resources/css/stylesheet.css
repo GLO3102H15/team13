@@ -6,6 +6,9 @@ body {
     height: 2000px;
     padding-top: 90px;
     background: #444349;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color: #FFFFFF;
 }
 
 /*Customiser le menu de Bootstrap*/
