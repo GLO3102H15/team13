@@ -5,11 +5,15 @@
     TvShowView = Backbone.View.extend({
         el: '#show_content',
         events: {},
-
         initialize: function(){
             _.bindAll(this, 'render');
             var self = this;
-            self.render();
+            this.model = new TvShowModel({collectionId: this.id});
+            this.model.fetch({
+                success: function(){
+                    self.render();
+                }
+            });
         },
 
         render: function(){
