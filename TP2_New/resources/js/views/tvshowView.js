@@ -32,14 +32,19 @@
         initialize: function(){
             _.bindAll(this, 'render');
             var self = this;
-            self.render();
+            this.model = new TvShowModelEpisodes({collectionId: this.id});
+            this.model.fetch({
+                success: function(){
+                    self.render();
+                }
+            });
         },
 
         render: function(){
             var self = this;
-            $.get('resources/templates/tvshowTemplate.html', function (data) {
+            $.get('resources/templates/tvshowEpisodesTemplate.html', function (data) {
                 self.template = _.template(data);
-                self.$el.html(self.template({tvshow : self.model.toJSON()}));
+                self.$el.html(self.template({tvshows : self.model.toJSON()}));
             }, 'html');
         }
     });
