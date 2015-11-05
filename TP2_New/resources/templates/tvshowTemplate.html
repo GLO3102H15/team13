@@ -1,9 +1,8 @@
 <div class="row">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-8">
+    <div class="col-xs-8 col-xs-offset-2">
         <div class="row">
             <div id="colImg" class="col-xs-12 col-sm-2"> <img src=" <%= tvshow.artworkUrl100 %> "> </div>
-            <div id="colInfo" class="col-xs-12 col-sm-10">
+            <div class="col-xs-12 col-sm-10 colInfo">
                 <h3><%= tvshow.collectionName %></h3>
                 <hr>
                 <p><%= tvshow.longDescription %></p>
@@ -15,8 +14,34 @@
                 <br>
             </div>
         </div>
+        <div class="row">
+            <input type="hidden" id="id_tvshow" value="<%= tvshow.collectionId %>">
+            <div class="col-md-8 col-md-offset-2" id="colEpisodes">
+
+            </div>
+        </div>
     </div>
 </div>
+<script type="application/javascript">
+    console.log('coucou');
+    id = $('#id_tvshow').val();
+    $.get('http://localhost:3000/unsecure/tvshows/season/'+id+'/episodes',function( data ) {
+        console.log(data);
+        $.each(data.results,function(){
+            html = '<div class="row"><div class="col-xs-12 col-sm-10 col-sm-offset-2 colInfo">';
+            trackNumber = this.trackNumber;
+            trackCount = this.trackCount;
+            trackName = this.trackName;
+            console.log(this.trackName);
+            html += '<span class="no_episode">Episode '+this.trackNumber+'</span> : ';
+            html += '<span class="title_episode">'+this.trackName+'</span>';
+            html += '<span class="toggle_aff_episode"><span class="glyphicon glyphicon-chevron-down"></span></span>';
+            html += '<span class="toggle_cach_episode"><span class="glyphicon glyphicon-chevron-up"></span></span>';
+            html += '</div></div>';
+            $('#colEpisodes').append(html);
+        });
+    });
+</script>
 
 <style type="text/css">
 
@@ -24,7 +49,7 @@
         text-align: center;
     }
 
-    #colInfo{
+    .colInfo{
         background-color: rgba(20, 20, 20, 0.50);
         color: #FFFFFF;
         font-family: 'Roboto', sans-serif;
@@ -41,6 +66,29 @@
     }
     .gap-right {
         margin-right: 30px;
+    }
+    #colEpisodes div{
+        margin-top: 5px;
+        padding-top: 5px;
+        padding-bottom:5px;
+    }
+    .no_episode{
+        font-weight:bold;
+        color : #16A79D;
+        text-decoration: underline;
+    }
+    .toggle_cach_episode{
+        display:none;
+    }
+    .toggle_aff_episode, .toggle_cach_episode{
+        float:right;
+    }
+    .toggle_aff_episode span, .toggle_cach_episode span {
+        vertical-align: middle;
+        cursor: pointer;
+    }
+    .toggle_aff_episode span:hover, .toggle_cach_episode span:hover {
+        color : #16A79D;
     }
 
 </style>

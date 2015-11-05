@@ -11,7 +11,19 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <input type="hidden" id="id_actor" value="<%= actor.artistId %>">
+    <div class="col-md-12" id="colMovie">
 
+    </div>
+</div>
+<script type="application/javascript">
+    console.log('coucou');
+    id = $('#id_actor').val();
+    $.get('http://localhost:3000/unsecure/actors/'+id+'/movies',function( data ) {
+        console.log(data);
+    });
+</script>
 <style type="text/css">
 
     #colImg{
