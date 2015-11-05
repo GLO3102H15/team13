@@ -61,15 +61,8 @@
 
         renameWatchlist:function(){
             var newName = $("#rename-watchlist-input-text").val();
-            this.model.save({
-                name: newName,
-                success: function(){
-                    window.location.reload();
-                },
-                error: function(){
-                    console.log("The watchlist could not be renamed.");
-                }
-            });
+            this.model.save({name: newName});
+            window.location.reload();
         }
     });
 })();
