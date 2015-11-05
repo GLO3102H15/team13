@@ -18,7 +18,7 @@ $(function(){
         }
     });
 
-    var app_router = new AppRouter;
+    window.app_router = new AppRouter;
 
     app_router.on('route:getHome', function () {
         var menuView = new MenuView();

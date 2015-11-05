@@ -26,8 +26,7 @@
 
         createWatchlist: function(){
             var isValid = this.collection.create({
-                name: $("#watchlist-input").val(),
-                owner: "owner@mail.com"
+                name: $("#watchlist-input").val()
             },{
                 url: this.collection.url,
                 type: 'POST',

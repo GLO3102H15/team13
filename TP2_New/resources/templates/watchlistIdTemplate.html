@@ -10,6 +10,16 @@
 <div class="row">
     <div class="col-xs-1"></div>
         <div class="col-xs-10">
+            <div class="btn-toolbar" role="toolbar">
+                <button id="rename-watchlist" type="button" class="btn btn-xs btn-primary">Rename</button>
+                <button id="delete-watchlist" type="button" class="btn btn-xs btn-danger">Delete</button>
+            </div>
+            <div id="rename-watchlist-input" class="input-group" style="display: none">
+                <input id="rename-watchlist-input-text" type="text" class="form-control" placeholder="Type the new name for your watchlist...">
+                <span class="input-group-btn">
+                    <button id="save-name-watchlist-button" class="btn" type="button" onclick="">Save</button>
+                </span>
+            </div>
             <table class="table">
                 <% for (i = 0; i < watchlist.movies.length ; i++){%>
                     <tr>
@@ -17,6 +27,7 @@
                             <a href="#/movies/<%= watchlist.movies[i].trackId %>">
                             <%= watchlist.movies[i].trackName %>
                             </a>
+                            <div id="<%= watchlist.movies[i].trackId %>" class="delMovie"><span id="<%= watchlist.movies[i].trackId %>" class="glyphicon glyphicon-trash" ></span></div>
                         </td>
                     </tr>
                 <% } %>
@@ -25,14 +36,66 @@
     <div class="col-xs-1"></div>
 </div>
 
+<script type="text/javascript">
+    $("#rename-watchlist" ).click(function() {
+        $( "#rename-watchlist-input" ).slideToggle();
+    });
+</script>
 
 <style type="text/css">
     #pagetitle a{
         color: #FFFFFF;
     }
     #pagetitle a:hover{
-        color: #d43a45;
+        color: #16A79D;
         text-decoration: none;
+    }
+
+    #rename-watchlist,
+    #delete-watchlist{
+        background-color: #8c8c8c;
+        color: #FFFFFF;
+        border: 0;
+        margin-bottom: 10px;
+    }
+
+    #rename-watchlist:hover,
+    #rename-watchlist:focus{
+        background-color: #16A79D;
+        border: 0;
+    }
+
+    #delete-watchlist:hover,
+    #delete-watchlist:focus{
+        background-color: #d43a45;
+        border: 0;
+    }
+
+    .delMovie{
+        float: right;
+        width: 25px;
+        height: 25px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 12px;
+    }
+
+    .delMovie span{
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+
+    .delMovie:hover{
+        background-color: #d43a45;
+    }
+
+    #save-name-watchlist-button{
+        background-color: #16A79D;
+        color: #FFFFFF;
+    }
+
+    #save-name-watchlist-button:hover{
+        background-color: #d43a45;
     }
 
     table a {
