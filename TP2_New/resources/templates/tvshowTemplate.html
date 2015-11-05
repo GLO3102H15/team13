@@ -50,7 +50,8 @@
             html += '<span class="toggle_aff_episode"><span class="glyphicon glyphicon-chevron-down"></span></span>';
             html += '<span class="toggle_cach_episode"><span class="glyphicon glyphicon-chevron-up"></span></span>';
             html += '<div class="resume">';
-            html += '<span>lorembeauz au aeihyair jorjihodhziheo o jdoaj oaoa oaj roajakn g , ,faekfaeihfaeo a,r aihriahfaelfnaofbaoefhaeohfnalghao</span>';
+            html += '<span class="description">'+this.shortDescription+'</span>';
+            html += '<a type="button" class="btn-itunes" href="'+this.radioStationUrl+'" target="_blank"><img src="resources/img/iTunes.png">Continuer sur l\'iTunes Store</a>';
             html += '</div>';
             html += '</div>';
             html += '</div>';
@@ -108,5 +109,25 @@
         color : #16A79D;
     }
     .resume{display:none;}
-
+    .btn-itunes, .btn-itunes:hover, .btn-itunes:visited, .btn-itunes:link, .btn-itunes:active{
+        display: block;
+        text-decoration: none;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-color: #2C2C2F;
+        border: 1px solid #16A79D;
+        color: #16A79D;
+        float: right;
+        height: 30px;
+        cursor: pointer;
+        font-size:12px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .btn-itunes img{
+        height: 15px;
+        padding-right: 5px;
+        float: left;
+    }
 </style>
