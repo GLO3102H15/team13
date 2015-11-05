@@ -1,3 +1,40 @@
-<div>
-    <p> El actor es <%= actor.artistName %> </p>
+<div class="row">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8">
+        <div class="row">
+      <!--      <div id="colImg" class="col-xs-12 col-sm-2"> <img src=" <%= actor.artworkUrl100 %> "> </div>-->
+            <div id="colInfo" class="col-xs-12 col-sm-10">
+                <h3><%= actor.artistName %></h3>
+                <h4> Gender : <span class="label label-default"><%= actor.primaryGenreName %></span> </h4>
+                <br>
+            </div>
+        </div>
+    </div>
 </div>
+
+<style type="text/css">
+
+    #colImg{
+        text-align: center;
+    }
+
+    #colInfo{
+        background-color: rgba(20, 20, 20, 0.50);
+        color: #FFFFFF;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+        font-size: 18px;
+
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+    }
+    .gap-right {
+        margin-right: 30px;
+    }
+
+</style>
