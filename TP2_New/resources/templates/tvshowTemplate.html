@@ -23,12 +23,24 @@
     </div>
 </div>
 <script type="application/javascript">
+    $(document).ready(function(){
+        $('body').delegate('.toggle_aff_episode','click',function(){
+            $(this).css('display','none');
+            $(this).parent().find('.toggle_cach_episode').css('display','block');
+            $(this).parent().find('.resume').css('display','block');
+        });
+        $('body').delegate('.toggle_cach_episode','click',function(){
+            $(this).css('display','none');
+            $(this).parent().find('.toggle_aff_episode').css('display','block');
+            $(this).parent().find('.resume').css('display','none');
+        });
+    });
     console.log('coucou');
     id = $('#id_tvshow').val();
     $.get('http://localhost:3000/unsecure/tvshows/season/'+id+'/episodes',function( data ) {
         console.log(data);
         $.each(data.results,function(){
-            html = '<div class="row"><div class="col-xs-12 col-sm-10 col-sm-offset-2 colInfo">';
+            html = '<div class="row episode"><div class="col-xs-12 col-sm-10 col-sm-offset-2 colInfo">';
             trackNumber = this.trackNumber;
             trackCount = this.trackCount;
             trackName = this.trackName;
@@ -37,7 +49,11 @@
             html += '<span class="title_episode">'+this.trackName+'</span>';
             html += '<span class="toggle_aff_episode"><span class="glyphicon glyphicon-chevron-down"></span></span>';
             html += '<span class="toggle_cach_episode"><span class="glyphicon glyphicon-chevron-up"></span></span>';
-            html += '</div></div>';
+            html += '<div class="resume">';
+            html += '<span>lorembeauz au aeihyair jorjihodhziheo o jdoaj oaoa oaj roajakn g , ,faekfaeihfaeo a,r aihriahfaelfnaofbaoefhaeohfnalghao</span>';
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
             $('#colEpisodes').append(html);
         });
     });
@@ -63,6 +79,7 @@
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
         border-radius: 20px;
+        z-index: 2;
     }
     .gap-right {
         margin-right: 30px;
@@ -90,5 +107,6 @@
     .toggle_aff_episode span:hover, .toggle_cach_episode span:hover {
         color : #16A79D;
     }
+    .resume{display:none;}
 
 </style>
