@@ -1,27 +1,81 @@
 <div class="row">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-8">
+    <div class="col-xs-8 col-xs-offset-2">
         <div class="row">
-      <!--      <div id="colImg" class="col-xs-12 col-sm-2"> <img src=" <%= actor.artworkUrl100 %> "> </div>-->
-            <div id="colInfo" class="col-xs-12 col-sm-10">
-                <h3><%= actor.artistName %></h3>
-                <h4> Gender : <span class="label label-default"><%= actor.primaryGenreName %></span> </h4>
+            <div id="colInfo" class="col-xs-12">
+                <h3>Liste des films avec <%= actor.artistName %></h3>
                 <br>
+                <div class="row">
+                    <input type="hidden" id="id_actor" value="<%= actor.artistId %>">
+                    <div class="col-md-12" id="colMovie">
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<div class="row">
-    <input type="hidden" id="id_actor" value="<%= actor.artistId %>">
-    <div class="col-md-12" id="colMovie">
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModal-movie-title"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-4 block-img-modal">
+                        <img id="myModal-img"/>
+                    </div>
+                    <div class="col-sm-8" id="myModal-description">
 
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-vert">More <span class="glyphicon glyphicon-plus"></span></button>
+            </div>
+        </div>
     </div>
 </div>
 <script type="application/javascript">
-    console.log('coucou');
+    $(document).ready(function(){
+        $('body').delegate('.actor-movie','click',function(){
+            //Charger Infos Modal
+            id = $(this).attr('id');
+            console.log(id);
+            $.get('http://localhost:3000/unsecure/movies/'+id,function( data ) {
+                //Remplir Modal
+                $('#myModal-movie-title').text(data.results[0].trackName);
+                $('#myModal-img').attr('src', data.results[0].artworkUrl100);
+                $('#myModal-description').text(data.results[0].longDescription);
+                $('.btn-vert').attr('id', data.results[0].trackId);
+                $('.shortDescription')
+                $('#myModal').modal('show');
+                $('.modal').css('display','block');
+            });
+        });
+        $('body').delegate('.btn-vert','click',function(){
+            id = $(this).attr('id');
+            $('.modal').modal('hide');
+            $('.modal-backdrop').remove();
+            window.location.href = '#/movies/'+id;
+        });
+    });
     id = $('#id_actor').val();
     $.get('http://localhost:3000/unsecure/actors/'+id+'/movies',function( data ) {
-        console.log(data);
+        $.each(data.results,function(){
+            html = '<div class="col-xs-12 col-md-4 actor-movie" id="'+this.trackId+'">';
+            html += '<div class="well">';
+            html += '<div class="title">';
+            html += '<span class="title_movie">'+this.trackName+'</span>';
+            html += '</div>';
+            html += '<span class="glyphicon glyphicon-search"></span>';
+            html += '</div>';
+            html += '</div>';
+            $('#colMovie').append(html);
+        });
     });
 </script>
 <style type="text/css">
@@ -47,6 +101,31 @@
     }
     .gap-right {
         margin-right: 30px;
+    }
+    #colMovie > div{height: 75px;color: #16A79D; padding-left: 10px; padding-right: 10px; margin-bottom: 10px; cursor:pointer;}
+    #colMovie .glyphicon-search{
+        position: absolute;
+        right: 20px;
+        margin-top: 35px;
+    }
+    #colMovie .title{
+        margin-right:10px;
+        overflow: hidden;
+        white-space: nowrap;
+        -o-text-overflow: ellipsis; /* pour Opera 9 */
+        text-overflow: ellipsis; /* pour le reste du monde */
+    }
+    .modal{
+        color:black;
+    }
+    .block-img-modal{text-align: center; height:150px; vertical-align: middle;}
+    .btn-vert{background-color: #16A79D; color:white;}
+    .modal-footer{border-top:0px;}
+    .modal button{margin-top:10px;}
+    #myModal-img{ margin-top: 20px;}
+    #myModal-description{
+        height:150px;
+        overflow: scroll;
     }
 
 </style>
