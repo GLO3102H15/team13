@@ -16,7 +16,7 @@
         </div>
         <div class="row">
             <input type="hidden" id="id_tvshow" value="<%= tvshow.collectionId %>">
-            <div class="col-md-8 col-md-offset-2" id="colEpisodes">
+            <div class="col-md-12" id="colEpisodes">
 
             </div>
         </div>
@@ -25,6 +25,7 @@
 <script type="application/javascript">
     $(document).ready(function(){
         $('body').delegate('.toggle_aff_episode','click',function(){
+            cacher_tout();
             $(this).css('display','none');
             $(this).parent().find('.toggle_cach_episode').css('display','block');
             $(this).parent().find('.resume').css('display','block');
@@ -35,7 +36,12 @@
             $(this).parent().find('.resume').css('display','none');
         });
     });
-    console.log('coucou');
+    function cacher_tout(){
+        $('.resume').css('display','none');
+        $('.toggle_aff_episode').css('display','block');
+        $('.toggle_cach_episode').css('display','none');
+
+    };
     id = $('#id_tvshow').val();
     $.get('http://localhost:3000/unsecure/tvshows/season/'+id+'/episodes',function( data ) {
         console.log(data);
