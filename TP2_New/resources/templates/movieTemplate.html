@@ -41,7 +41,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-vert">Go</button>
+                <button type="button" class="btn btn-vert" id="go-watchlist" data-dismiss="modal">Go</button>
             </div>
         </div>
     </div>
@@ -73,10 +73,16 @@
                 $('#myModal-movie').modal('show');
                 $('#myModal-movie').css('display','block');
             });
+            $('body').delegate('#go-watchlist','click',function(){
+                console.log('coucou');
+                $('.modal-backdrop').css('display','none');
+                window.location.href = '#/watchlists';
+            });
             $('body').delegate('#glyph-watchlist-ajouter','click',function(){
                 $('#myModal-watchlist').modal('show');
                 $('#myModal-watchlist').css('display','block');
             });
+
             $('body').delegate('#ajouter-movie-watchlist','click',function(){
                 id_watchlist = $('#myModal-watchlist select').val();
                 id_movie = $('#id_movie').val();
