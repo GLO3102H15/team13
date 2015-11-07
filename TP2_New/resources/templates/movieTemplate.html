@@ -74,7 +74,6 @@
                 $('#myModal-movie').css('display','block');
             });
             $('body').delegate('#go-watchlist','click',function(){
-                console.log('coucou');
                 $('.modal-backdrop').css('display','none');
                 window.location.href = '#/watchlists';
             });
@@ -86,11 +85,12 @@
             $('body').delegate('#ajouter-movie-watchlist','click',function(){
                 id_watchlist = $('#myModal-watchlist select').val();
                 id_movie = $('#id_movie').val();
+                var film;
                 $.get('http://localhost:3000/unsecure/movies/'+id_movie,function( data ) {
                     film = data.results[0];
-                    $.post('http://localhost:3000/unsecure/watchlists/'+id_watchlist+'/movies',film,function( data ){
-                        getWatchlist();
-                    });
+                });
+                $.post('http://localhost:3000/unsecure/watchlists/'+id_watchlist+'/movies',film,function( data ){
+                    getWatchlist();
                 });
             });
         });

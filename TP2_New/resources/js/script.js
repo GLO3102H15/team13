@@ -2,6 +2,7 @@
  * Created by thomasbonnardot on 07/11/2015.
  */
 function getWatchlist(){
+    console.log('fonction getWatchlist');
     $('#colInfo h3 .glyphicon').remove();
     $('#myModal-watchlist select option').remove();
     $.get('http://localhost:3000/unsecure/watchlists',function( data ) {
