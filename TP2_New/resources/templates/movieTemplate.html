@@ -5,7 +5,7 @@
                 <h3><%= movie.trackName %></h3>
                 <hr>
                 <div class="col-xs-12 col-sm-4" id="colImg">
-                    <img src=" <%= movie.artworkUrl100.replace("100x100","400x400") %> ">
+                    <img src=" <%= movie.artworkUrl100 %> ">
                     <h4> Gender : <span class="label label-default"><%= movie.primaryGenreName %></span> </h4>
                     <h4> Year : <span class="label label-default"><%= movie.releaseDate.substring(0,4) %></span> </h4>
                     <h4> Duration : <span class="label label-default"><%= (( movie.trackTimeMillis / 1000 ) / 60).toString().substring(0,3) %></span> </h4>
@@ -129,15 +129,8 @@
         text-align: center;
         margin-bottom: 10px;
     }
-
-    #colImg h4{
-        text-align: left;
-    }
-
-    #colImg img{
-        margin-bottom: 10px;
-        width: 100%;
-    }
+    #colImg h4{text-align: left;}
+    #colImg img{margin-bottom: 10px;}
 
     #colInfo{
         text-align: justify;
@@ -172,6 +165,7 @@
         color:#16A79D;
     }
 
+<<<<<<< HEAD
     #glyph-watchlist-present{
         color:#16A79D;
     }
@@ -208,5 +202,7 @@
         height:100%;
     }
 
+=======
+>>>>>>> parent of 262b1d6... Plusieurs ajustements CSS un peu partout :)
 </style>
 
