@@ -14,6 +14,8 @@
                 <div class="col-xs-12 col-sm-8">
                     <input type="hidden" id="id_movie" value="<%= movie.trackId %>">
                     <p><%= movie.longDescription %></p>
+                </div>
+                <div class="col-xs-12 trailer-box">
                     <button id="search-button" type="button" class="btn btn-default watchTrailerBtn" disabled onclick="search('<%= movie.trackName %> + trailer ')">WATCH TRAILER</button>
                 </div>
             </div>
@@ -67,6 +69,7 @@
     getWatchlist();
         function getWatchlist(){
             $('#colInfo h3 .glyphicon').remove();
+            $('#myModal-watchlist select option').remove();
             $.get('http://localhost:3000/unsecure/watchlists',function( data ) {
                 $('#colInfo h3').append('<span class="glyphicon glyphicon-plus glyph-watchlist" id="glyph-watchlist-ajouter"></span>');
                 id = $('#id_movie').val();
@@ -75,10 +78,14 @@
                 for (i = 0; i < data.length; i++) {
                     html = '<option value="'+data[i].id+'">'+data[i].name;
                     for (j = 0; j < data[i].movies.length; j++) {
+                        flag_present = false
                         if(parseInt(data[i].movies[j].trackId) == parseInt(id) ){
                             flag = true;
-                            html += '<small>  (déjà présent)</small>';
+                            flag_present = true;
                         }
+                    }
+                    if (flag_present){
+                        html += '<small>  (déjà présent)</small>';
                     }
                     html += '</option>';
                     $('#myModal-watchlist select').append(html);
@@ -173,6 +180,8 @@
         display: block;
         float: right;
         cursor:pointer;
+        margin-left: 5px;
+        margin-right:5px;
     }
     .glyph-watchlist:hover{
         color:#16A79D;
@@ -181,7 +190,7 @@
     #glyph-watchlist-present:hover{color:#fff;}
     .btn-vert{background-color: #16A79D; color:white;}
     .modal{color:black;}
-
+    .trailer-box{text-align: center;}
 
 </style>
 
