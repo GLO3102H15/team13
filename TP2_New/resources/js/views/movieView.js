@@ -24,6 +24,7 @@
                 self.template = _.template(data);
                 self.$el.html(self.template({movie : self.model.toJSON()}));
             }, 'html');
+            getWatchlist();
         }
     });
 })();
