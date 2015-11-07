@@ -14,8 +14,11 @@ function search() {
         });
 
         request.execute(function(response) {
-            var str = JSON.stringify(response.result);
-            $('#search-container').html('<pre>' + str + '</pre>');
+            var str = (response.result);
+            //console.log(response.result.items[0].id.videoId);
+            var url = "https://www.youtube.com/embed/" + str.items[0].id.videoId;
+            //console.log(url);
+            $('#search-container').html('<iframe width="420" height="315" src="' + url + '" frameborder="0" allowfullscreen></iframe>');
         });
     });
 }
