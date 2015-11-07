@@ -11,6 +11,7 @@ function getWatchlist(){
         flag = false;
         for (i = 0; i < data.length; i++) {
             html = '<option value="'+data[i].id+'">'+data[i].name;
+            flag_present = false
             for (j = 0; j < data[i].movies.length; j++) {
                 flag_present = false
                 if(parseInt(data[i].movies[j].trackId) == parseInt(id) ){
