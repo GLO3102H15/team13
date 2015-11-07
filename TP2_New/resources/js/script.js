@@ -8,6 +8,8 @@ function getWatchlist(){
     $.get('http://localhost:3000/unsecure/watchlists',function( data ) {
         $('#colInfo h3').append('<span class="glyphicon glyphicon-plus glyph-watchlist" id="glyph-watchlist-ajouter"></span>');
         id = $('#id_movie').val();
+        console.log('Dans le GET');
+        console.log(data);
         //Pour chaque Watchlist
         flag = false;
         for (i = 0; i < data.length; i++) {
@@ -15,6 +17,8 @@ function getWatchlist(){
             flag_present = false
             for (j = 0; j < data[i].movies.length; j++) {
                 flag_present = false
+                //console.log(id);
+                //console.log(data[i].movies[j].trackId);
                 if(parseInt(data[i].movies[j].trackId) == parseInt(id) ){
                     flag = true;
                     flag_present = true;

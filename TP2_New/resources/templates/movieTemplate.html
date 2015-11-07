@@ -74,8 +74,7 @@
                 $('#myModal-movie').css('display','block');
             });
             $('body').delegate('#go-watchlist','click',function(){
-                $('.modal-backdrop').css('display','none');
-                window.location.href = '#/watchlists';
+                setTimeout(function(){ window.location.href = '#/watchlists'; }, 400);
             });
             $('body').delegate('#glyph-watchlist-ajouter','click',function(){
                 $('#myModal-watchlist').modal('show');
@@ -85,13 +84,16 @@
             $('body').delegate('#ajouter-movie-watchlist','click',function(){
                 id_watchlist = $('#myModal-watchlist select').val();
                 id_movie = $('#id_movie').val();
+                console.log('click sur Ajout Watchlist');
                 var film;
+                var watchlist;
                 $.get('http://localhost:3000/unsecure/movies/'+id_movie,function( data ) {
                     film = data.results[0];
+                    $.post('http://localhost:3000/unsecure/watchlists/'+id_watchlist+'/movies',film,function( data ){
+                        getWatchlist();
+                    });
                 });
-                $.post('http://localhost:3000/unsecure/watchlists/'+id_watchlist+'/movies',film,function( data ){
-                    getWatchlist();
-                });
+
             });
         });
 

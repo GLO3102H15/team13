@@ -25,6 +25,7 @@
         },
 
         createWatchlist: function(){
+            console.log('click creation WichList');
             var isValid = this.collection.create({
                 name: $("#watchlist-input").val()
             },{
