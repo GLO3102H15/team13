@@ -44,24 +44,68 @@
         </div>
     </div>
 </div>
+<!-- Modal -->
+<div class="modal fade bs-example-modal-sm" id="myModal-watchlist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Ajouter dans une watchlist</h4>
+            </div>
+            <div class="modal-body">
+                <select class="form-control">
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-vert" data-dismiss="modal" id="ajouter-movie-watchlist">Ajouter</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script type="application/javascript">
-        $.get('http://localhost:3000/unsecure/watchlists',function( data ) {
-            $('#colInfo h3').append('<span class="glyphicon glyphicon-plus glyph-watchlist" id="glyph-watchlist-ajouter"></span>');
-            id = $('#id_movie').val();
-            //Pour chaque Watchlist
-            for (i = 0; i < data.length; i++) {
-                for (j = 0; j < data[i].movies.length; j++) {
-                    if(parseInt(data[i].movies[j].trackId) == parseInt(id) ){
-                        $('.glyph-watchlist').remove();
-                        $('#colInfo h3').append('<span class="glyphicon glyphicon-ok glyph-watchlist" id="glyph-watchlist-present"></span>');
+    getWatchlist();
+        function getWatchlist(){
+            $('#colInfo h3 .glyphicon').remove();
+            $.get('http://localhost:3000/unsecure/watchlists',function( data ) {
+                $('#colInfo h3').append('<span class="glyphicon glyphicon-plus glyph-watchlist" id="glyph-watchlist-ajouter"></span>');
+                id = $('#id_movie').val();
+                //Pour chaque Watchlist
+                flag = false;
+                for (i = 0; i < data.length; i++) {
+                    html = '<option value="'+data[i].id+'">'+data[i].name;
+                    for (j = 0; j < data[i].movies.length; j++) {
+                        if(parseInt(data[i].movies[j].trackId) == parseInt(id) ){
+                            flag = true;
+                            html += '<small>  (déjà présent)</small>';
+                        }
                     }
+                    html += '</option>';
+                    $('#myModal-watchlist select').append(html);
                 }
-            }
-        });
+                if(flag){
+                    $('#colInfo h3').append('<span class="glyphicon glyphicon-ok glyph-watchlist" id="glyph-watchlist-present"></span>');
+                }
+            });
+        }
         $(document).ready(function(){
             $('body').delegate('#glyph-watchlist-present','click',function(){
                 $('#myModal-movie').modal('show');
-                $('.modal').css('display','block');
+                $('#myModal-movie').css('display','block');
+            });
+            $('body').delegate('#glyph-watchlist-ajouter','click',function(){
+                $('#myModal-watchlist').modal('show');
+                $('#myModal-watchlist').css('display','block');
+            });
+            $('body').delegate('#ajouter-movie-watchlist','click',function(){
+                id_watchlist = $('#myModal-watchlist select').val();
+                id_movie = $('#id_movie').val();
+                $.get('http://localhost:3000/unsecure/movies/'+id_movie,function( data ) {
+                    film = data.results[0];
+                    $.post('http://localhost:3000/unsecure/watchlists/'+id_watchlist+'/movies',film,function( data ){
+                        getWatchlist();
+                    });
+                });
             });
         });
 
