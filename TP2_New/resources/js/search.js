@@ -4,8 +4,8 @@ function handleAPILoaded() {
 }
 
 // Search for a specified string.
-function search() {
-    var q = $('#query').val();
+function search(query) {
+    var q = query;
     gapi.client.load('youtube', 'v3', function() {
         var request = gapi.client.youtube.search.list({
             q: q,
