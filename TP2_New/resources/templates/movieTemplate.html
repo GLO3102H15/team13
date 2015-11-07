@@ -20,9 +20,9 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div id="trailerRow" class="row">
             <div class="col-xs-12">
-                <div id="search-container"></div>
+                <div id="search-container" class="video-container"></div>
             </div>
         </div>
     </div>
@@ -95,11 +95,14 @@
 <script src="https://apis.google.com/js/client.js?onload=handleAPILoaded"></script>
 
 <style type="text/css">
+    #trailerRow{
+        visibility: hidden;
+    }
+
     #search-container{
         text-align: center;
         background-color: rgba(20, 20, 20, 0.30);
-        padding-top: 20px;
-        padding-bottom: 20px;
+
         -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
         -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
         box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
@@ -156,14 +159,46 @@
         margin-left: 5px;
         margin-right:5px;
     }
+
     .glyph-watchlist:hover{
         color:#16A79D;
     }
-    #glyph-watchlist-present{color:#16A79D;}
-    #glyph-watchlist-present:hover{color:#fff;}
-    .btn-vert{background-color: #16A79D; color:white;}
-    .modal{color:black;}
-    .trailer-box{text-align: center;}
+
+    #glyph-watchlist-present{
+        color:#16A79D;
+    }
+
+    #glyph-watchlist-present:hover{
+        color:#fff;
+    }
+
+    .btn-vert{
+        background-color: #16A79D; color:white;
+    }
+
+    .modal{
+        color:black;
+    }
+
+    .trailer-box{
+        text-align: center;
+    }
+
+    .video-container {
+        position:relative;
+        padding-bottom:56.25%;
+        padding-top:30px;
+        height:0;
+        overflow:hidden;
+    }
+
+    .video-container iframe, .video-container object, .video-container embed {
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+    }
 
 </style>
 

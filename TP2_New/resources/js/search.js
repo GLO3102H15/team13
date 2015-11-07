@@ -5,6 +5,7 @@ function handleAPILoaded() {
 
 // Search for a specified string.
 function search(query) {
+    $("#trailerRow").css('visibility', 'visible');
     var q = query;
     gapi.client.load('youtube', 'v3', function() {
         var request = gapi.client.youtube.search.list({
@@ -18,7 +19,7 @@ function search(query) {
             //console.log(response.result.items[0].id.videoId);
             var url = "https://www.youtube.com/embed/" + str.items[0].id.videoId;
             //console.log(url);
-            $('#search-container').html('<iframe width="420" height="315" src="' + url + '" frameborder="0" allowfullscreen></iframe>');
+            $('#search-container').html('<iframe src="' + url + '" frameborder="0" allowfullscreen></iframe>');
         });
     });
 }
