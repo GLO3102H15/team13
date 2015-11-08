@@ -24,7 +24,7 @@ $(document).ready(function(){
                 getWatchlist();
                 html = '<div class="alert alert-success alert-dismissible fade in alert-add-success" role="alert">';
                 html += '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>';
-                html += '<strong>Ajout réussi!</strong> Le film a bien été rajouté à la watchlist : '+name_watchlist+'.</div>';
+                html += '<strong>Added succesfully!</strong> The movie has been added to the watchlist : '+name_watchlist+'.</div>';
                 $('#alert-movie').append(html);
             });
         });

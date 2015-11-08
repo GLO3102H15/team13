@@ -1,19 +1,28 @@
 <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
         <div class="row">
-            <div id="colImg" class="col-xs-12 col-sm-2"> <img src=" <%= tvshow.artworkUrl100 %> "> </div>
-            <div class="col-xs-12 col-sm-10 colInfo">
+            <div class="col-xs-12 col-sm-12 colInfo">
                 <h3><%= tvshow.collectionName %></h3>
                 <hr>
-                <p><%= tvshow.longDescription %></p>
-                <hr>
-                <h4> Gender : <span class="label label-default"><%= tvshow.primaryGenreName %></span> </h4>
-                <h4> Year : <span class="label label-default"><%= tvshow.releaseDate.substring(0,4) %></span> </h4>
-                <h4> No Episodes : <span class="label label-default"><%= tvshow.trackCount %></span> </h4>
-                <h4> Country : <span class="label label-default"><%= tvshow.country %></span> </h4>
-                <br>
+                <div class="col-xs-12 col-sm-4" id="colImg">
+                    <img src=" <%= tvshow.artworkUrl100.replace("100x100","400x400") %> ">
+                    <h4> Gender : <span class="label label-default"><%= tvshow.primaryGenreName %></span> </h4>
+                    <h4> Year : <span class="label label-default"><%= tvshow.releaseDate.substring(0,4) %></span> </h4>
+                    <h4> Episodes : <span class="label label-default"><%= tvshow.trackCount %></span> </h4>
+                    <h4> Country : <span class="label label-default"><%= tvshow.country %></span> </h4>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                    <p><%= tvshow.longDescription %></p>
+                    <button id="search-button" type="button" class="btn btn-default watchTrailerBtn" disabled onclick="search('<%= tvshow.collectionName %> + trailer ')">WATCH TRAILER</button>
+                </div>
             </div>
         </div>
+        <div id="trailerRow" class="row">
+            <div class="col-xs-12">
+                <div id="search-container" class="video-container"></div>
+            </div>
+        </div>
+
         <div class="row">
             <input type="hidden" id="id_tvshow" value="<%= tvshow.collectionId %>">
             <div class="col-md-12" id="colEpisodes">
@@ -22,6 +31,12 @@
         </div>
     </div>
 </div>
+
+
+<script src="resources/js/search.js"></script>
+<script src="https://apis.google.com/js/client.js?onload=handleAPILoaded"></script>
+
+
 <script type="application/javascript">
     $(document).ready(function(){
         $('body').delegate('.toggle_aff_episode','click',function(){
@@ -40,13 +55,12 @@
         $('.resume').css('display','none');
         $('.toggle_aff_episode').css('display','block');
         $('.toggle_cach_episode').css('display','none');
-
     };
     id = $('#id_tvshow').val();
     $.get('http://localhost:3000/unsecure/tvshows/season/'+id+'/episodes',function( data ) {
         console.log(data);
         $.each(data.results,function(){
-            html = '<div class="row episode"><div class="col-xs-12 col-sm-10 col-sm-offset-2 colInfo">';
+            html = '<div class="row episode"><div class="col-xs-12 col-sm-12 colInfo">';
             trackNumber = this.trackNumber;
             trackCount = this.trackCount;
             trackName = this.trackName;
@@ -67,22 +81,42 @@
 </script>
 
 <style type="text/css">
+    #trailerRow{
+        display: none;
+    }
 
+    #search-container{
+        text-align: center;
+        background-color: rgba(20, 20, 20, 0.30);
+
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+
+        -webkit-border-radius: 0px 0px 20px 20px;
+        -moz-border-radius: 0px 0px 20px 20px;
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    .watchTrailerBtn{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
     #colImg{
         text-align: center;
     }
-
+    #colImg img{
+        width: 100%;
+    }
     .colInfo{
         background-color: rgba(20, 20, 20, 0.50);
         color: #FFFFFF;
         font-family: 'Roboto', sans-serif;
         font-weight: 100;
         font-size: 18px;
-
         -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
         -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
         box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
-
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
         border-radius: 20px;
@@ -130,10 +164,33 @@
         padding-top: 5px;
         padding-left: 5px;
         padding-right: 5px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
     }
     .btn-itunes img{
         height: 15px;
         padding-right: 5px;
         float: left;
+    }
+
+    .trailer-box{
+        text-align: center;
+    }
+
+    .video-container {
+        position:relative;
+        padding-bottom:56.25%;
+        padding-top:30px;
+        height:0;
+        overflow:hidden;
+    }
+
+    .video-container iframe, .video-container object, .video-container embed {
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
     }
 </style>

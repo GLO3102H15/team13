@@ -8,7 +8,7 @@
                 <h3><%= movie.trackName %></h3>
                 <hr>
                 <div class="col-xs-12 col-sm-4" id="colImg">
-                    <img src=" <%= movie.artworkUrl100 %> ">
+                    <img src=" <%= movie.artworkUrl100.replace("100x100","400x400") %> ">
                     <h4> Gender : <span class="label label-default"><%= movie.primaryGenreName %></span> </h4>
                     <h4> Year : <span class="label label-default"><%= movie.releaseDate.substring(0,4) %></span> </h4>
                     <h4> Duration : <span class="label label-default"><%= (( movie.trackTimeMillis / 1000 ) / 60).toString().substring(0,3) %></span> </h4>
@@ -37,16 +37,16 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Gérer mes watchlists</h4>
+                <h4 class="modal-title">Manage my watchlists</h4>
             </div>
             <div class="modal-body">
                 <div id="watchlist-deja-present">
-                    Ce film est déjà présent dans :
+                    This movie has already been added to :
                     <ul>
 
                     </ul>
                 </div>
-                Vous allez être redirigé vers la page de gestion des watchlists
+                You will be sent to the watchlists manager.
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -61,7 +61,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Ajouter dans une watchlist</h4>
+                <h4 class="modal-title">Add to a watchlist</h4>
             </div>
             <div class="modal-body">
                 <select class="form-control">
@@ -69,7 +69,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-vert" data-dismiss="modal" id="ajouter-movie-watchlist">Ajouter</button>
+                <button type="button" class="btn btn-vert" data-dismiss="modal" id="ajouter-movie-watchlist">Add</button>
             </div>
         </div>
     </div>
@@ -84,7 +84,7 @@
 
 <style type="text/css">
     #trailerRow{
-        visibility: hidden;
+        display: none;
     }
 
     #search-container{

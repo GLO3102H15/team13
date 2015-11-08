@@ -49,7 +49,7 @@
             $.get('http://localhost:3000/unsecure/movies/'+id,function( data ) {
                 //Remplir Modal
                 $('#myModal-movie-title').text(data.results[0].trackName);
-                $('#myModal-img').attr('src', data.results[0].artworkUrl100);
+                $('#myModal-img').attr('src', data.results[0].artworkUrl100.replace("100x100","400x400"));
                 $('#myModal-description').text(data.results[0].longDescription);
                 $('.btn-vert').attr('id', data.results[0].trackId);
                 $('.shortDescription')
@@ -123,7 +123,7 @@
     .btn-vert{background-color: #16A79D; color:white;}
     .modal-footer{border-top:0px;}
     .modal button{margin-top:10px;}
-    #myModal-img{ margin-top: 20px;}
+    #myModal-img{ margin-top: 20px; height: 100%}
     #myModal-description{
         height:150px;
         overflow: scroll;
@@ -143,6 +143,9 @@
         padding-top: 5px;
         padding-left: 5px;
         padding-right: 5px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
     }
     .btn-itunes img{
         height: 15px;
