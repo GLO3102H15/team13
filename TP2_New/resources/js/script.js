@@ -13,33 +13,42 @@ $(document).ready(function(){
         $('#myModal-watchlist').modal('show');
         $('#myModal-watchlist').css('display','block');
     });
-
     $('body').delegate('#ajouter-movie-watchlist','click',function(){
         id_watchlist = $('#myModal-watchlist select').val();
+        name_watchlist = $('#myModal-watchlist select option:selected').text();
         id_movie = $('#id_movie').val();
-        console.log('click sur Ajout Watchlist');
         var film;
-        var watchlist;
         $.get('http://localhost:3000/unsecure/movies/'+id_movie,function( data ) {
             film = data.results[0];
             $.post('http://localhost:3000/unsecure/watchlists/'+id_watchlist+'/movies',film,function( data ){
                 getWatchlist();
+                html = '<div class="alert alert-success alert-dismissible fade in alert-add-success" role="alert">';
+                html += '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>';
+                html += '<strong>Ajout réussi!</strong> Le film a bien été rajouté à la watchlist : '+name_watchlist+'.</div>';
+                $('#alert-movie').append(html);
             });
         });
-
+    });
+    $('body').delegate('#save-watchlist-button','click',function(){
+        name = $("#watchlist-input").val();
+        $.post('http://localhost:3000/unsecure/watchlists',{"name":name},function( data ){
+            html = '<a href="#/watchlists/'+data.id+'">';
+            html += '<button id="'+data.id+'" class="btn btn-primary watchlistBtn" type="button">'+data.name;
+            html += '<span class="badge">'+data.movies.length+' <span class="glyphicon glyphicon glyphicon-film" aria-hidden="true"></span></span>';
+            html += '</button></a>';
+            $('#list-watchlist').append(html);
+            $('#watchlist-input').val('');
+        });
     });
 });
 
 function getWatchlist(){
-    console.log('fonction getWatchlist');
     $('#colInfo h3 .glyphicon').remove();
     $('#myModal-watchlist select option').remove();
     $('#watchlist-deja-present ul li').remove();
     $.get('http://localhost:3000/unsecure/watchlists',function( data ) {
         $('#colInfo h3').append('<span class="glyphicon glyphicon-plus glyph-watchlist" id="glyph-watchlist-ajouter"></span>');
         id = $('#id_movie').val();
-        console.log('Dans le GET');
-        console.log(data);
         //Pour chaque Watchlist
         flag = false;
         for (i = 0; i < data.length; i++) {
@@ -65,4 +74,7 @@ function getWatchlist(){
             $('#colInfo h3').append('<span class="glyphicon glyphicon-ok glyph-watchlist" id="glyph-watchlist-present"></span>');
         }
     });
+};
+function createWatchlistScript(){
+    console.log('create a tester');
 }

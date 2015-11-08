@@ -4,28 +4,30 @@
 (function(){
     WatchlistView = Backbone.View.extend({
         el: '#show_content',
+        /*
         events: {
             'click #save-watchlist-button': 'createWatchlist'
         },
-
-        initialize: function() {
+        */
+        initialize : function() {
             _.bindAll(this, 'render');
             var self = this;
             this.collection.bind('sync add remove',function(){
                 self.render();
             });
         },
-
-        render: function(){
+        render : function(){
             var self = this;
             $.get('resources/templates/watchlistTemplate.html', function (data) {
                 self.template = _.template(data);
                 self.$el.html(self.template({watchlists : self.collection.toJSON()}));
             }, 'html');
         },
-
-        createWatchlist: function(){
+        //Pb de double insertion avec cette methode
+        /*
+        createWatchlist : function(){
             console.log('click creation WichList');
+            /*
             var isValid = this.collection.create({
                 name: $("#watchlist-input").val()
             },{
@@ -36,7 +38,9 @@
             if(!isValid){
                 $("#save-watchlist-error").slideDown("fast");
             }
+
         }
+         */
     });
 })();
 

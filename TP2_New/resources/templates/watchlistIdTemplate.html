@@ -1,39 +1,35 @@
 <div class="row">
-    <div class="col-xs-1"></div>
-    <div class="col-xs-10">
+    <div class="col-xs-10 col-xs-offset-1">
         <h2 id="pagetitle"><a href="#/watchlists">MY WATCHLISTS</a>
         <small><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></small>
         <%= watchlist.name %></h2>
     </div>
-    <div class="col-xs-1"></div>
 </div>
 <div class="row">
-    <div class="col-xs-1"></div>
-        <div class="col-xs-10">
-            <div class="btn-toolbar" role="toolbar">
-                <button id="rename-watchlist" type="button" class="btn btn-sm btn-primary">Rename</button>
-                <button id="delete-watchlist" type="button" class="btn btn-sm btn-danger">Delete</button>
-            </div>
-            <div id="rename-watchlist-input" class="input-group" style="display: none">
-                <input id="rename-watchlist-input-text" type="text" class="form-control" value="<%= watchlist.name %>">
-                <span class="input-group-btn">
-                    <button id="save-name-watchlist-button" class="btn" type="button" onclick="">Save</button>
-                </span>
-            </div>
-            <table class="table">
-                <% for (i = 0; i < watchlist.movies.length ; i++){%>
-                    <tr>
-                        <td>
-                            <a href="#/movies/<%= watchlist.movies[i].trackId %>">
-                            <%= watchlist.movies[i].trackName %>
-                            </a>
-                            <div id="<%= watchlist.movies[i].trackId %>" class="delMovie"><span id="<%= watchlist.movies[i].trackId %>" class="glyphicon glyphicon-trash" ></span></div>
-                        </td>
-                    </tr>
-                <% } %>
-            </table>
+    <div class="col-xs-10 col-xs-offset-1">
+        <div class="btn-toolbar" role="toolbar">
+            <button id="rename-watchlist" type="button" class="btn btn-sm btn-primary">Rename</button>
+            <button id="delete-watchlist" type="button" class="btn btn-sm btn-danger">Delete</button>
         </div>
-    <div class="col-xs-1"></div>
+        <div id="rename-watchlist-input" class="input-group" style="display: none">
+            <input id="rename-watchlist-input-text" type="text" class="form-control" value="<%= watchlist.name %>">
+            <span class="input-group-btn">
+                <button id="save-name-watchlist-button" class="btn" type="button" onclick="">Save</button>
+            </span>
+        </div>
+        <table class="table">
+            <% for (i = 0; i < watchlist.movies.length ; i++){%>
+                <tr>
+                    <td>
+                        <a href="#/movies/<%= watchlist.movies[i].trackId %>">
+                        <%= watchlist.movies[i].trackName %>
+                        </a>
+                        <div id="<%= watchlist.movies[i].trackId %>" class="delMovie"><span id="<%= watchlist.movies[i].trackId %>" class="glyphicon glyphicon-trash" ></span></div>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
 </div>
 
 <script type="text/javascript">

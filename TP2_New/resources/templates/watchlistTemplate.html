@@ -1,22 +1,19 @@
 <div class="row">
-    <div class="col-xs-1"></div>
-    <div class="col-xs-10">
+    <div class="col-xs-10 col-xs-offset-1">
         <h2 id="pagetitle">MY WATCHLISTS</h2><hr>
         <div class="input-group" id="nameSame">
             <input id="watchlist-input" type="text" class="form-control" placeholder="Type the name for a new watchlist...">
         <span class="input-group-btn">
-            <button id="save-watchlist-button" class="btn" type="button" onclick="">
+            <button id="save-watchlist-button" class="btn" type="button">
                 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> WATCHLIST</button>
         </span>
         </div>
         <p id="save-watchlist-error">Please, type a valid name for your new watchlist !</p><hr>
     </div>
-    <div class="col-xs-1"></div>
 </div>
 <div class="row">
-    <div class="col-xs-1"></div>
-    <div class="col-xs-10">
-        <div class=" btn-toolbar">
+    <div class="col-xs-10 col-xs-offset-1">
+        <div class=" btn-toolbar" id="list-watchlist">
             <% _.each(watchlists, function(watchlist){ %>
             <a href="#/watchlists/<%= watchlist.id %>"><button id="<%= watchlist.id %>" class="btn btn-primary watchlistBtn" type="button">
                 <%= watchlist.name %><span class="badge"><%= watchlist.movies.length %>
@@ -25,7 +22,6 @@
             <% }); %>
         </div><br>
     </div>
-    <div class="col-xs-1"></div>
 </div>
 
 
