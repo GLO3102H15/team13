@@ -18,7 +18,7 @@
                     <input type="hidden" id="id_movie" value="<%= movie.trackId %>">
                     <p><%= movie.longDescription %></p>
                 </div>
-                <div class="col-xs-12 trailer-box">
+                <div class="col-xs-12 col-sm-8 trailer-box">
                     <button id="search-button" type="button" class="btn btn-default watchTrailerBtn" disabled onclick="search('<%= movie.trackName %> + trailer ')">WATCH TRAILER</button>
                 </div>
             </div>
@@ -110,7 +110,7 @@
         margin-bottom: 10px;
     }
     #colImg h4{text-align: left;}
-    #colImg img{margin-bottom: 10px;}
+    #colImg img{margin-bottom: 10px; width: 100%}
 
     #colInfo{
         text-align: justify;
@@ -196,5 +196,6 @@
         width:100%;
         height:100%;
     }
+
 </style>
 
