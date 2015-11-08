@@ -18,8 +18,9 @@
                     <input type="hidden" id="id_movie" value="<%= movie.trackId %>">
                     <p><%= movie.longDescription %></p>
                 </div>
-                <div class="col-xs-12 col-sm-8 trailer-box">
+                <div class="col-xs-12 trailer-box">
                     <button id="search-button" type="button" class="btn btn-default watchTrailerBtn" disabled onclick="search('<%= movie.trackName %> + trailer ')">WATCH TRAILER</button>
+                    <button id="hide-button" type="button" class="btn btn-default watchTrailerBtn" >HIDE TRAILER</button>
                 </div>
             </div>
         </div>
@@ -75,7 +76,18 @@
     </div>
 </div>
 <script type="application/javascript">
-    //getWatchlist();
+    $(document).ready(function(){
+        $('body').delegate('#search-button','click',function(){
+            $(this).hide();
+            $('#hide-button').css('display','inline');
+        });
+        $('body').delegate('#hide-button','click',function(){
+            $(this).hide();
+            $('#search-button').css('display','inline');
+            $('#trailerRow').slideUp();
+
+        });
+    });
 
 </script>
 
@@ -99,7 +111,7 @@
         -moz-border-radius: 0px 0px 20px 20px;
         border-radius: 0px 0px 20px 20px;
     }
-
+    #hide-button{display:none;}
     .watchTrailerBtn{
         margin-top: 10px;
         margin-bottom: 10px;

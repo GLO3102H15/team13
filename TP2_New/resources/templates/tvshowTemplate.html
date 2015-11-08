@@ -14,10 +14,12 @@
                 <div class="col-xs-12 col-sm-8">
                     <p><%= tvshow.longDescription %></p>
                 </div>
-                <div class="col-xs-12 col-sm-8 trailer-box">
-                    <button id="search-button" type="button" class="btn btn-default watchTrailerBtn" disabled onclick="search('<%= tvshow.collectionName %> + trailer ')">WATCH TRAILER</button>
+                <div class="col-xs-12 trailer-box">
+                    <button id="search-button" type="button" class="btn btn-default watchTrailerBtn" disabled onclick="search('<%= tvshow.collectionName %> + trailer ')">WATCH TRAILER</button>
+                    <button id="hide-button" type="button" class="btn btn-default watchTrailerBtn" >HIDE TRAILER</button>
                 </div>
             </div>
+
         </div>
         <div id="trailerRow" class="row">
             <div class="col-xs-12">
@@ -51,6 +53,16 @@
             $(this).css('display','none');
             $(this).parent().find('.toggle_aff_episode').css('display','block');
             $(this).parent().find('.resume').css('display','none');
+        });
+        $('body').delegate('#search-button','click',function(){
+            $(this).hide();
+            $('#hide-button').css('display','inline');
+        });
+        $('body').delegate('#hide-button','click',function(){
+            $(this).hide();
+            $('#search-button').css('display','inline');
+            $('#trailerRow').slideUp();
+
         });
     });
     function cacher_tout(){
@@ -99,7 +111,7 @@
         -moz-border-radius: 0px 0px 20px 20px;
         border-radius: 0px 0px 20px 20px;
     }
-
+    #hide-button{display:none;}
     .watchTrailerBtn{
         margin-top: 10px;
         margin-bottom: 10px;
