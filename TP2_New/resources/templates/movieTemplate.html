@@ -34,9 +34,15 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Manager mes films</h4>
+                <h4 class="modal-title">Gérer mes watchlists</h4>
             </div>
             <div class="modal-body">
+                <div id="watchlist-deja-present">
+                    Ce film est déjà présent dans :
+                    <ul>
+
+                    </ul>
+                </div>
                 Vous allez être redirigé vers la page de gestion des watchlists
             </div>
             <div class="modal-footer">
@@ -67,35 +73,6 @@
 </div>
 <script type="application/javascript">
     //getWatchlist();
-
-        $(document).ready(function(){
-            $('body').delegate('#glyph-watchlist-present','click',function(){
-                $('#myModal-movie').modal('show');
-                $('#myModal-movie').css('display','block');
-            });
-            $('body').delegate('#go-watchlist','click',function(){
-                setTimeout(function(){ window.location.href = '#/watchlists'; }, 400);
-            });
-            $('body').delegate('#glyph-watchlist-ajouter','click',function(){
-                $('#myModal-watchlist').modal('show');
-                $('#myModal-watchlist').css('display','block');
-            });
-
-            $('body').delegate('#ajouter-movie-watchlist','click',function(){
-                id_watchlist = $('#myModal-watchlist select').val();
-                id_movie = $('#id_movie').val();
-                console.log('click sur Ajout Watchlist');
-                var film;
-                var watchlist;
-                $.get('http://localhost:3000/unsecure/movies/'+id_movie,function( data ) {
-                    film = data.results[0];
-                    $.post('http://localhost:3000/unsecure/watchlists/'+id_watchlist+'/movies',film,function( data ){
-                        getWatchlist();
-                    });
-                });
-
-            });
-        });
 
 </script>
 
@@ -164,8 +141,6 @@
     .glyph-watchlist:hover{
         color:#16A79D;
     }
-
-<<<<<<< HEAD
     #glyph-watchlist-present{
         color:#16A79D;
     }
@@ -173,7 +148,24 @@
     #glyph-watchlist-present:hover{
         color:#fff;
     }
-
+    #watchlist-deja-present ul{margin-left:50px;}
+    #watchlist-deja-present ul {
+        list-style: none;
+        padding: 0;
+    }
+    #watchlist-deja-present li:before {
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        padding: 0 10px;
+        content: "\e080";
+    }
     .btn-vert{
         background-color: #16A79D; color:white;
     }
@@ -201,8 +193,5 @@
         width:100%;
         height:100%;
     }
-
-=======
->>>>>>> parent of 262b1d6... Plusieurs ajustements CSS un peu partout :)
 </style>
 
