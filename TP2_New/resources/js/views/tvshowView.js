@@ -10,8 +10,9 @@
             _.bindAll(this, 'render');
             var self = this;
             //this.model = new TvShowModel({collectionId: this.id});
-            self.collection = new TvShowCollectionEpisodes({});
-            self.collection.fetch({
+            this.collection = new TvShowCollectionEpisodes({});
+            this.collection.url = 'http://localhost:3000/unsecure/tvshows/season/' + this.id + '/episodes',
+            this.collection.fetch({
                 success: function(){
                     console.log('Render');
                     console.log(self.collection);
