@@ -78,8 +78,8 @@
             radioStationUrl: ''
         },
 
-        parse: function(response){
-            return response.results[0];
-        },
+        //parse: function(response){
+        //    return response.results[0];
+        //},
     });
 })();

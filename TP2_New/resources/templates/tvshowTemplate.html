@@ -72,13 +72,13 @@
     };
     id = $('#id_tvshow').val();
     $.get('http://localhost:3000/unsecure/tvshows/season/'+id+'/episodes',function( data ) {
-        console.log(data);
+        //console.log(data);
         $.each(data.results,function(){
             html = '<div class="row episode"><div class="col-xs-12 col-sm-12 colInfo">';
             trackNumber = this.trackNumber;
             trackCount = this.trackCount;
             trackName = this.trackName;
-            console.log(this.trackName);
+            //console.log(this.trackName);
             html += '<span class="no_episode">Episode '+this.trackNumber+'</span> : ';
             html += '<span class="title_episode">'+this.trackName+'</span>';
             html += '<span class="toggle_aff_episode"><span class="glyphicon glyphicon-chevron-down"></span></span>';
