@@ -29,8 +29,12 @@ $(function(){
     });
 
     app_router.on('route:getLogIn', function () {
-        //var menuView = new MenuView();
-        var loginView = new LoginView();
+        if($.cookie('myToken')){
+            app_router.navigate("#/home",true);
+        }
+        else{
+            var loginView = new LoginView();
+        }
     });
 
     app_router.on('route:getHome', function () {
