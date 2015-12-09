@@ -14,3 +14,30 @@ body {
     font-weight: 100;
     color: #FFFFFF;
 }
+
+.bigTitle{
+    text-align: center;
+    font-size: 50px;
+    background-color: #16A79D;
+    padding: 50px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+
+.orDiv {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.or {
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #FFFFFF;
+    background-color: #16A79D;
+    padding: 5px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+
+}
