@@ -30,7 +30,19 @@
         <div class="row">
             <input type="hidden" id="id_tvshow" value="<%= tvshow.collectionId %>">
             <div class="col-md-12" id="colEpisodes">
-
+                <% _.each(episodes, function(episode){ %>
+                    <div class="row episode">
+                        <div class="col-xs-12 col-sm-12 colInfo">
+                            <span class="no_episode">Episode <%= episode.trackNumber %></span> : <span class="title_episode"><%= episode.trackName %></span>
+                            <span class="toggle_aff_episode"><span class="glyphicon glyphicon-chevron-down"></span></span>
+                            <span class="toggle_cach_episode"><span class="glyphicon glyphicon-chevron-up"></span></span>
+                            <div class="resume">
+                                <span class="description"><%= episode.shortDescription %></span>
+                                <a type="button" class="btn-itunes" href="<%= episode.radioStationUrl %>" target="_blank"><img src="resources/img/iTunes.png">Continuer sur l'iTunes Store</a>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
             </div>
         </div>
     </div>
@@ -71,8 +83,10 @@
         $('.toggle_cach_episode').css('display','none');
     };
     id = $('#id_tvshow').val();
+/*
     $.get('http://localhost:3000/unsecure/tvshows/season/'+id+'/episodes',function( data ) {
         //console.log(data);
+        $('.episode').remove();
         $.each(data.results,function(){
             html = '<div class="row episode"><div class="col-xs-12 col-sm-12 colInfo">';
             trackNumber = this.trackNumber;
@@ -92,6 +106,7 @@
             $('#colEpisodes').append(html);
         });
     });
+    */
 </script>
 
 <style type="text/css">

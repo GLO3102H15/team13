@@ -22,6 +22,7 @@
                 self.template = _.template(data);
                 self.$el.html(self.template({watchlists : self.collection.toJSON()}));
             }, 'html');
+            console.log(self.collection.toJSON());
         },
         //Pb de double insertion avec cette methode
         /*

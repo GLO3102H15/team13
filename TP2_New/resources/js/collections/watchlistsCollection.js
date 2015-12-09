@@ -6,6 +6,7 @@ $(function(){
         model: WatchlistModel,
         url : 'http://localhost:3000/unsecure/watchlists',
         parse: function(response){
+            console.log(response);
             return response;
         }
     });

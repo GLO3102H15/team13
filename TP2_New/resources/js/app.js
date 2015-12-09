@@ -50,7 +50,13 @@ $(function(){
 
     app_router.on('route:getTvshow', function (id) {
         var menuView = new MenuView();
-        var tvshowView = new TvShowView({ id: id});
+
+        var tvshowCollection = new TvShowCollectionEpisodes({id: id});
+        var tvshowView = new TvShowView({
+            id: id,
+            collection: tvshowCollection
+        });
+        tvshowCollection.fetch();
     });
 
     app_router.on('route:getTvshowEpisodes', function (id) {

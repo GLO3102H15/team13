@@ -9,42 +9,26 @@
         initialize: function(){
             _.bindAll(this, 'render');
             var self = this;
-            //this.model = new TvShowModel({collectionId: this.id});
-            this.collection = new TvShowCollectionEpisodes({});
-            this.collection.url = 'http://localhost:3000/unsecure/tvshows/season/' + this.id + '/episodes',
-            this.collection.fetch({
-                success: function(){
-                    console.log('Render');
-                    console.log(self.collection);
-                }
+            this.model = new TvShowModel({collectionId: this.id});
+            this.collection.url = 'http://localhost:3000/unsecure/tvshows/season/' + this.id + '/episodes';
+            this.collection.bind('sync add remove',function(){
+                self.render();
             });
             // We want the view to render itself each time the model is changed.
             // We can bind to any events like this.
-            this.collection.bind('change', function() {
-                self.render();
-            });
-            /*
             this.model.fetch({
                 success: function(){
                     self.render();
-                    console.log(self);
                 }
             });
-            */
         },
 
         render: function(){
             var self = this;
             $.get('resources/templates/tvshowTemplate.html', function (data) {
                 self.template = _.template(data);
-                //self.$el.html(self.template({tvshow : self.model.toJSON()}));
+                self.$el.html(self.template({tvshow : self.model.toJSON(), episodes: self.collection.toJSON()}));
             }, 'html');
-            //var collection = new TvShowCollectionEpisodes();
-            //collection.url = 'http://localhost:3000/unsecure/tvshows/season/'+this.id+'/episodes';
-            //collection.fetch();
-            //console.log('coucou');
-            //console.log(collection);
-
         }
     });
 

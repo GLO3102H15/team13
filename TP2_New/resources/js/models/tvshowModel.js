@@ -37,8 +37,6 @@
     });
     TvShowModelEpisodes = Backbone.Model.extend({
 
-        idAttribute: "collectionId",
-        //urlRoot : 'http://localhost:3000/unsecure/tvshows/season/',
         defaults: {
             wrapperType: '',
             kind: '',
@@ -76,10 +74,6 @@
             shortDescription: '',
             longDescription: '',
             radioStationUrl: ''
-        },
-
-        //parse: function(response){
-        //    return response.results[0];
-        //},
+        }
     });
 })();
