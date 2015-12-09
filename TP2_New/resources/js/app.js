@@ -24,7 +24,7 @@ $(function(){
 
 
     app_router.on('route:getSearch', function () {
-        //var menuView = new MenuView();
+        var menuView = new MenuView();
         var searchView = new SearchView();
     });
 

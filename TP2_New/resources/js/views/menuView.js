@@ -4,7 +4,9 @@
 (function(){
     MenuView = Backbone.View.extend({
         el: '#show_menu',
-        events: {},
+        events: {
+            'click #doSearch' : 'getResults'
+        },
 
         initialize: function(){
             _.bindAll(this, 'render');
@@ -18,6 +20,11 @@
                 self.template = _.template(data);
                 self.$el.html(self.template);
             }, 'html');
+        },
+
+        getResults: function(){
+            var qURL = "search?q=" + $("#searchInput").val();
+            app_router.navigate(qURL,true);
         }
     });
 })();
