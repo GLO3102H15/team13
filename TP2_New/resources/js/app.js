@@ -8,17 +8,30 @@ $(function(){
 
     var AppRouter = Backbone.Router.extend({
         routes: {
-            ""                             : "getHome",           // Route par défault
+            ""                             : "getLogIn",          // Route pour le log-in / sign-up
+            "home"                         : "getHome",           // Route pour le home
             "movies/:id"                   : "getMovie",          // Route pour afficher les détails d'un film
             "actors/:id"                   : "getActor",          // Route pour afficher les détails d'un acteur
             "tvshows/season/:id"           : "getTvshow",         // Route pour afficher les détails d'un TV show
             "tvshows/season/:id/episodes"  : "getTvshowEpisodes", // Route pour afficher les épisodes d'un TV show
             "watchlists"                   : "getWatchlist",      // Route pour afficher les détails d'une watchlist
-            "watchlists/:id"               : "getWatchlistId"     // Route pour afficher les détails d'une watchlist
+            "watchlists/:id"               : "getWatchlistId",    // Route pour afficher les détails d'une watchlist
+            "search"                       : "getSearch"          // Route pour afficher les résultats d'une recherche
         }
     });
 
     window.app_router = new AppRouter;
+
+
+    app_router.on('route:getSearch', function () {
+        //var menuView = new MenuView();
+        var searchView = new SearchView();
+    });
+
+    app_router.on('route:getLogIn', function () {
+        //var menuView = new MenuView();
+        var loginView = new LoginView();
+    });
 
     app_router.on('route:getHome', function () {
         var menuView = new MenuView();

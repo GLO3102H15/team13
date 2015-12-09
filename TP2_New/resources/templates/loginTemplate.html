@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-3">
+        <h3>Log-in</h3>
+        <hr>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="inputEmailLogIn" class="col-xs-4 control-label">E-mail : </label>
+
+                <div class="col-xs-8">
+                    <input type="email" class="form-control" id="inputEmailLogIn" placeholder="Your e-mail address">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPasswordLogIn" class="col-xs-4 control-label">Password : </label>
+
+                <div class="col-xs-8">
+                    <input type="password" class="form-control" id="inputPasswordLogIn" placeholder="Your password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-6 col-xs-offset-6">
+                    <button type="button" class="btn btn-default" id="btnSubmitLogIn">Log-in</button>
+                </div>
+            </div>
+        </form>
+        <div id="loginError" class="alert alert-warning" role="alert" style="display: none;">
+            <p><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> E-mail or password not valid. Please try again.</p>
+        </div>
+    </div>
+
+    <div class="col-xs-3">
+        <h3>Sign-up</h3>
+        <hr>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="inputNameSignUp" class="col-xs-4 control-label">Name : </label>
+
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" id="inputNameSignUp" placeholder="Your name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmailSignUp" class="col-xs-4 control-label">E-mail : </label>
+
+                <div class="col-xs-8">
+                    <input type="email" class="form-control" id="inputEmailSignUp" placeholder="Your e-mail address">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPasswordSignUp" class="col-xs-4 control-label">Password : </label>
+
+                <div class="col-xs-8">
+                    <input type="password" class="form-control" id="inputPasswordSignUp" placeholder="Your password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-6 col-xs-offset-6">
+                    <button type="button" class="btn btn-default" id="btnSubmitSignUp">Sign-up</button>
+                </div>
+            </div>
+        </form>
+        <div id="signupError" class="alert alert-warning" role="alert" style="display: none;">
+            <p><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> Name, e-mail or password not valid. Please try again.</p>
+        </div>
+    </div>
+    <div class="col-xs-3"></div>
+</div>
