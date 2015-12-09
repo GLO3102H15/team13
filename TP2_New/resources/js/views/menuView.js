@@ -23,8 +23,10 @@
         },
 
         getResults: function(){
-            var qURL = "search?q=" + $("#searchInput").val();
+            var qKey = $("#searchInput").val();
+            var qURL = "search?q=" + qKey;
             app_router.navigate(qURL,true);
+            //var resultsView = new SearchView({q : qURL, key : qKey});
         }
     });
 })();

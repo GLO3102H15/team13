@@ -7,7 +7,8 @@
         events: {
         },
 
-        initialize: function () {
+        initialize: function (options) {
+            this.options = options;
             _.bindAll(this, 'render');
             var self = this;
             self.render();
@@ -15,8 +16,8 @@
 
         render: function () {
             var self = this;
-            var result;
-
+            var results;
+            var query = this.options.q;
             var token = $.cookie('myToken');
 
             $.ajaxSetup({
@@ -24,22 +25,24 @@
             });
 
             $.ajax({
-                url: "http://localhost:3000/search?q=saw",
+                url: "http://localhost:3000/search?q=" + query + "&limit=24",
                 type: 'GET',
                 dataType: 'JSON',
+                async: true,
                 success: function (data) {
-                    result = data;
-                    console.log(result);
+                    results = data.results;
+                    $.get('resources/templates/searchTemplate.html', function (data) {
+                        self.template = _.template(data);
+                        self.$el.html(self.template({results: results, key: query}));
+                    }, 'html');
                 },
                 error: function (data) {
-                    //ERROR
+                    if(data.status == 401){
+                        console.log("Token expired");
+                        app_router.navigate("",true);
+                    }
                 }
             });
-
-            $.get('resources/templates/searchTemplate.html', function (data) {
-                self.template = _.template(data);
-                self.$el.html(self.template);
-            }, 'html');
         }
     })
 })();

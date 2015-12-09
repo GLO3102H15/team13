@@ -1,37 +1,82 @@
 <div class="row">
     <div class="col-xs-12">
-        <h1>Results for :</h1>
+        <h1>Results for : <%= key %></h1>
     </div>
     <div class="col-xs-1"></div>
     <div class="col-xs-10">
+        <h2>Movies</h2>
+        <div class="row">
+            <% _.each(results, function(result){ %>
+            <% if(result.wrapperType == "track"){ %>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                <div class="hovereffect">
+                    <img class="img-responsive" src="<%= result.artworkUrl100.replace("100x100","1000x1000") %>" alt="">
+                    <div class="overlay">
+                        <a href="#/movies/<%= result.trackId %>"><h2>DETAILS</h2></a>
+                        <p class="icon-links">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-plus-sign"></span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+            <% }); %>
+        </div>
+        <% if(_.findWhere(results, {wrapperType : "track"}) == undefined){ %>
+        <h4>No movie found</h4>
+        <% } %><hr>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Panel title</h3>
+        <h2>TV-Shows</h2>
+        <div class="row">
+            <% _.each(results, function(result){ %>
+            <% if(result.wrapperType == "collection"){ %>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                <div class="hovereffect">
+                    <img class="img-responsive" src="<%= result.artworkUrl100.replace("100x100","1000x1000") %>" alt="">
+                    <div class="overlay">
+                        <a href="#/tvshows/season/<%= result.collectionId %>"><h2>DETAILS</h2></a>
+                        <p class="icon-links">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-plus-sign"></span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="panel-body">
-                Panel content
-            </div>
-        </div><hr>
+            <% } %>
+            <% }); %>
+        </div>
+        <% if(_.findWhere(results, {wrapperType : "collection"}) == undefined){ %>
+        <h4>No tv-show found</h4>
+        <% } %>
+        <hr>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Panel title</h3>
+        <h2>Actors</h2>
+        <div class="row">
+            <% _.each(results, function(result){ %>
+            <% if(result.wrapperType == "artist"){ %>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                <div class="hovereffect">
+                    <img class="img-responsive" src="<%= result.artworkUrl100.replace("100x100","1000x1000") %>" alt="">
+                    <div class="overlay">
+                        <a href="#/actors/<%= result.artistId %>"><h2>DETAILS</h2></a>
+                        <p class="icon-links">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-plus-sign"></span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="panel-body">
-                Panel content
-            </div>
-        </div><hr>
+            <% } %>
+            <% }); %>
+        </div>
+        <% if(_.findWhere(results, {wrapperType : "artist"}) == undefined){ %>
+        <h4>No actor found</h4>
+        <% } %>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">
-                Panel content
-            </div>
-        </div><hr>
-    </div>
     <div class="col-xs-1"></div>
 
 </div>
