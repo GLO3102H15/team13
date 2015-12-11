@@ -37,7 +37,7 @@
                 success: function (data) {
                     var date = new Date();
                     var minutes = 60;
-                    console.log('SUCCESS', data);
+                    console.log('LOG-IN SUCCESS', data);
                     date.setTime(date.getTime() + (minutes * 60 * 1000));
                     $.cookie("myToken", data.token, {expires: date});
                     app_router.navigate('home',true);
@@ -61,7 +61,11 @@
                 data: signupData,
                 contentType: 'application/x-www-form-urlencoded',
                 success: function (data) {
-                    console.log('SUCCESS', data);
+                    console.log('SIGN-UP SUCCESS', data);
+                    var date = new Date();
+                    var minutes = 60;
+                    date.setTime(date.getTime() + (minutes * 60 * 1000));
+                    $.cookie("myToken", data.token, {expires: date});
                     app_router.navigate('home',true);
                 },
                 error: function (data) {
