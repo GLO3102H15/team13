@@ -16,10 +16,33 @@
 
         render: function(){
             var self = this;
-            $.get('resources/templates/menuTemplate.html', function (data) {
-                self.template = _.template(data);
-                self.$el.html(self.template);
-            }, 'html');
+            var token = $.cookie('myToken');
+
+            $.ajaxSetup({
+                headers: { "Authorization": token }
+            });
+
+
+
+            $.ajax({
+                url: "http://localhost:3000/tokenInfo",
+                type: 'GET',
+                dataType: 'JSON',
+                async: true,
+                success: function (data) {
+                    var name = data.name
+                     $.get('resources/templates/menuTemplate.html', function (data) {
+                         self.template = _.template(data);
+                         self.$el.html(self.template({username : name}));
+                     }, 'html');
+                },
+                error: function (data) {
+                    if(data.status == 401){
+                        console.log("Token expired");
+                        app_router.navigate("",true);
+                    }
+                }
+            });
         },
 
         getResults: function(){
