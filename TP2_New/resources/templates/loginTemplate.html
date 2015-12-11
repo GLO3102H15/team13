@@ -1,15 +1,28 @@
+<style>
+    .sign-up-form{
+        display: none;
+    }
+    .btn-sign{
+        margin-top: 20px;
+        width:100%;
+        background-color: #16A79D;
+    }
+    .btn-sign-cancel{
+        display: none;
+        margin-top: 20px;
+        width:100%;
+        background-color: #d43a45;
+    }
+</style>
 <div class="row">
-    <div class="col-xs-3"></div>
-    <div class="col-xs-6">
+    <div class="col-xs-6 col-xs-offset-3">
         <div class="bigTitle">
             U<span class="glyphicon glyphicon-film" aria-hidden="true" style="margin-right: 20px; margin-left: 20px"></span>M
         </div>
     </div>
-    <div class="col-xs-3"></div>
 </div>
 <div class="row">
-    <div class="col-xs-3"></div>
-    <div class="col-xs-6">
+    <div class="col-xs-6 col-xs-offset-3">
         <h3>Log-in</h3>
         <hr>
         <form class="form-horizontal">
@@ -37,16 +50,18 @@
             <p><span class="glyphicon glyphicon-alert" aria-hidden="true" style="margin-right: 10px"></span>E-mail or password not valid. Please try again.</p>
         </div>
     </div>
-    <div class="col-xs-3"></div>
 </div>
 <div class="row">
     <div class="col-xs-12 orDiv">
         <span class="glyphicon glyphicon-film" aria-hidden="true"></span><span class="or">OR</span><span class="glyphicon glyphicon-film" aria-hidden="true"></span>
     </div>
 </div>
+<div class=" col-xs-6 col-xs-offset-3 btn-sign-up">
+    <button class="btn btn-sign">Sign-up <small>(it's free!)</small></button>
+    <button class="btn btn-sign-cancel">Cancel</button>
+</div>
 <div class="row">
-    <div class="col-xs-3"></div>
-    <div class="col-xs-6">
+    <div class="col-xs-6 col-xs-offset-3 sign-up-form">
         <h3>Sign-up <small>(it's free!)</small></h3>
         <hr>
         <form class="form-horizontal">
@@ -81,5 +96,20 @@
             <p><span class="glyphicon glyphicon-alert" aria-hidden="true" style="margin-right: 10px"></span>Name, e-mail or password not valid. Please try again.</p>
         </div>
     </div>
-    <div class="col-xs-3"></div>
 </div>
+<script type="application/javascript">
+    $(document).ready(function(){
+        $('.btn-sign').click(function(){
+            $('.btn-sign').hide();
+            $('.btn-sign-cancel').css('display','block');
+            $('.sign-up-form').css('display','block');
+            //$('#inputNameSignUp').focus();
+        });
+        $('.btn-sign-cancel').click(function(){
+            $('.btn-sign').show();
+            $('.btn-sign-cancel').hide();
+            $('.sign-up-form').slideUp();
+            $('.sign-up-form form')[0].reset();
+        });
+    });
+</script>
