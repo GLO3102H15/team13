@@ -30,9 +30,16 @@
     </div><!-- /.container-fluid -->
 </nav>
 <div class="btn-surprise">
-    <span><span class="glyphicon glyphicon-random"></span> Surprise Me</span>
+    <span class="glyphicon glyphicon-random"></span><span class="text-surprise">Surprise Me</span>
 </div>
-
+<script type="application/javascript">
+    $(document).ready(function(){
+        $('.btn-surprise').click(function(){
+            var id = Surprise();
+            window.location.href = '#/surprise/'+id;
+        });
+    })
+</script>
 <style>
     .navbar-default {
         background-color: rgba(20, 20, 20, 0.50);
@@ -100,7 +107,12 @@
         position:fixed;
         top: 120px;
         right:0px;
-        padding: 10px;
+        padding: 15px;
+        cursor: pointer;
+    }
+    .btn-surprise  .glyphicon{
+        font-size: 25px;
+        padding-right: 10px;
     }
 
     @media (min-width: 1000px) {
