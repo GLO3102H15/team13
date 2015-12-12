@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+        <div class="row">
+            <div id="colUser" class="col-xs-12 col-sm-12">
+                <div class="col-xs-12 col-sm-4">
+                    <img src="resources/img/user-info.png">
+                </div>
+                <div class="col-xs-12 col-sm-8 form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Username</label>
+                        <div class="col-sm-10">
+                            <%= user.name %>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <%= user.email %>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Friends</label>
+                        <div class="col-sm-10">
+                            <% if(user.following.length == 0) {%>
+                                <button class="btn btn-primary col-xs-2">empty</button>
+                            <%} else{
+                                _.each(user.following, function(friend){ %>
+                            <a href="#/user/<%= friend.id %>" class="btn btn-primary col-xs-3"><%= friend.name %></a>
+                            <%})}%>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="resources/js/search.js"></script>
+<script src="https://apis.google.com/js/client.js?onload=handleAPILoaded"></script>
+
+<script type="application/javascript">
+
+    // Permet de follow une personne
+    /*
+    var token = $.cookie('myToken');
+
+    $.ajaxSetup({
+        headers: { "Authorization": token }
+    });
+
+
+
+    $.ajax({
+        url: "http://localhost:3000/follow",
+        type: 'POST',
+        data: {id:'566c7172e81f6e8bd0e5eb9b'},
+        dataType: 'JSON',
+        async: true,
+        success: function (data) {
+            console.log('ok');
+            console.log(data);
+        },
+        error: function (data) {
+            if(data.status == 401){
+                console.log("Token expired");
+                app_router.navigate("",true);
+            }
+        }
+    });
+    */
+</script>
+
+
+<style type="text/css">
+    #colUser{
+        text-align: justify;
+        background-color: rgba(20, 20, 20, 0.50);
+        color: #FFFFFF;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+        font-size: 18px;
+
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+    }
+    #colUser img{
+        width:100%;
+        margin-top:10px;
+    }
+    #colUser .form-horizontal{
+        margin-top:25px;
+    }
+    #colUser .form-group > div {
+        padding-top:7px;
+    }
+</style>

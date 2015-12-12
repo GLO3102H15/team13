@@ -4,28 +4,21 @@
 (function(){
     UserModel = Backbone.Model.extend({
 
-        idAttribute: "artistId",
-        urlRoot : 'http://localhost:3000/unsecure/actors/',
+        //idAttribute: "artistId",
+        //urlRoot : 'http://localhost:3000/unsecure/users/',
         defaults: {
-            wrapperType : '',
-            artistType : '',
-            artistName : '',
-            artistLinkUrl : '',
-            artistId : '',
-            amgArtistId : '',
-            primaryGenreName : '',
-            primaryGenreId : '',
-            radioStationUrl : ''
+            email : '',
+            name : '',
+            id : '',
+            following : '',
+            token: ''
+
         },
 
         parse: function(response){
-            return response.results[0];
-        },
-
-        validate: function(attrs){
-            if(!attrs.artistName || attrs.artistName === ""){
-                return "Please enter a valid sss";
-            }
+            console.log('userModel');
+            console.log(response);
+            return response
         }
     });
 })();

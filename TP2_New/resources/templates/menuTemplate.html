@@ -23,7 +23,7 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#/watchlists">MY WATCHLISTS</a></li>
-                <li><a href="#"><i><%= username %></i></a></li>
+                <li><a href="#user/<%= idUser %>"><i><%= username %></i></a></li>
                 <li><a href="#"><i class="fa fa-cog"></i></a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -113,7 +113,7 @@
     }
     .btn-surprise  .glyphicon{
         font-size: 25px;
-        padding-right: 10px;
+        padding-right: 20px;
     }
 
     @media (min-width: 1000px) {
@@ -154,6 +154,10 @@
         }
         .navbar-form{
             border: 0;
+        }
+        .btn-surprise{
+            overflow: hidden;
+            margin-right: -90px;;
         }
     }
 

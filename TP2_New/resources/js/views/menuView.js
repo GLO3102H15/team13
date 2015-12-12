@@ -30,10 +30,12 @@
                 dataType: 'JSON',
                 async: true,
                 success: function (data) {
-                    var name = data.name
+                    var name = data.name;
+                    var idUser = data.id;
+                    //console.log(data);
                      $.get('resources/templates/menuTemplate.html', function (data) {
                          self.template = _.template(data);
-                         self.$el.html(self.template({username : name}));
+                         self.$el.html(self.template({username : name, idUser : idUser}));
                      }, 'html');
                 },
                 error: function (data) {

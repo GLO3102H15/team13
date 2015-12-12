@@ -16,8 +16,9 @@ $(function(){
             "tvshows/season/:id/episodes"  : "getTvshowEpisodes", // Route pour afficher les épisodes d'un TV show
             "watchlists"                   : "getWatchlist",      // Route pour afficher les détails d'une watchlist
             "watchlists/:id"               : "getWatchlistId",    // Route pour afficher les détails d'une watchlist
-            "search?q=:query"              : "getSearch",          // Route pour afficher les résultats d'une recherche
-            "surprise/:id"                     : "getSurprise"        // Route pour generer un film aléatoire
+            "search?q=:query"              : "getSearch",         // Route pour afficher les résultats d'une recherche
+            "surprise/:id"                 : "getSurprise",       // Route pour generer un film aléatoire
+            "user/:id"                     : "getUser"            // Route pour generer un film aléatoire
         }
     });
 
@@ -26,6 +27,11 @@ $(function(){
     app_router.on('route:getSurprise', function (id) {
         var menuView = new MenuView();
         var movieView = new MovieView({ id: id});
+    });
+
+    app_router.on('route:getUser', function (id) {
+        var menuView = new MenuView();
+        var userView = new UserView({ id: id});
     });
 
     app_router.on('route:getSearch', function (query) {
