@@ -2,6 +2,7 @@
     <div class="col-xs-8 col-xs-offset-2">
         <div class="row">
             <div id="colUser" class="col-xs-12 col-sm-12">
+                <span class="btn-follow"><span class="glyphicon glyphicon-plus follow"></span>Follow</span>
                 <div class="col-xs-12 col-sm-4">
                     <img src="resources/img/user-info.png">
                 </div>
@@ -27,7 +28,7 @@
                                 _.each(user.following, function(friend){ %>
                             <a href="#/user/<%= friend.id %>" class="btn btn-primary col-xs-3"><%= friend.name %></a>
                             <%})}%>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -98,5 +99,26 @@
     }
     #colUser .form-group > div {
         padding-top:7px;
+    }
+    #colUser .btn-follow{
+        position: absolute;
+        top:20px;
+        right: 20px;
+        background-color: #16A79D;
+        border-radius: 20px;
+        padding: 5px;
+        -webkit-transition: width 1s; /* Safari */
+        transition: width 1s;
+        overflow: hidden;
+        z-index: 999;
+        width:44px;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+    #colUser .btn-follow:hover{
+        width:110px;
+    }
+    #colUser .btn-follow .follow{
+        padding: 5px 10px;
     }
 </style>
