@@ -5,7 +5,7 @@
     MovieModel = Backbone.Model.extend({
 
         idAttribute: "trackId",
-        urlRoot : 'http://localhost:3000/unsecure/movies/',
+        urlRoot : app_URL + 'movies/',
         defaults: {
             wrapperType : '',
             kind : '',

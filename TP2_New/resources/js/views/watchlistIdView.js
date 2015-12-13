@@ -18,6 +18,12 @@
             this.model.fetch({
                 success: function(){
                     self.render();
+                },
+                error: function (data) {
+                    if(data.status == 401){
+                        console.log("Token expired");
+                        app_router.navigate("",true);
+                    }
                 }
             });
         },
@@ -40,6 +46,10 @@
                         window.location.reload();
                     },
                     error: function(){
+                        if(data.status == 401){
+                            console.log("Token expired");
+                            app_router.navigate("",true);
+                        }
                         console.log("The watchlist could not be destroyed.");
                     }
                 });
@@ -54,6 +64,10 @@
                     window.location.reload();
                 },
                 error: function(){
+                    if(data.status == 401){
+                        console.log("Token expired");
+                        app_router.navigate("",true);
+                    }
                     console.log("The movie could not be deleted.");
                 }
             });

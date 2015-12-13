@@ -5,7 +5,7 @@
     ActorModel = Backbone.Model.extend({
 
         idAttribute: "artistId",
-        urlRoot : 'http://localhost:3000/unsecure/actors/',
+        urlRoot : app_URL + 'actors/',
         defaults: {
             wrapperType : '',
             artistType : '',

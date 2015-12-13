@@ -5,7 +5,7 @@
     TvShowModel = Backbone.Model.extend({
 
         idAttribute: "collectionId",
-        urlRoot : 'http://localhost:3000/unsecure/tvshows/season/',
+        urlRoot : app_URL + 'tvshows/season/',
         defaults: {
             wrapperType : '',
             collectionType : '',

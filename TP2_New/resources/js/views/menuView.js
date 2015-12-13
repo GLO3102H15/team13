@@ -22,10 +22,8 @@
                 headers: { "Authorization": token }
             });
 
-
-
             $.ajax({
-                url: "http://localhost:3000/tokenInfo",
+                url: app_URL + "tokenInfo",
                 type: 'GET',
                 dataType: 'JSON',
                 async: true,

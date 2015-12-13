@@ -10,7 +10,7 @@
             _.bindAll(this, 'render');
             var self = this;
             this.model = new TvShowModel({collectionId: this.id});
-            this.collection.url = 'http://localhost:3000/unsecure/tvshows/season/' + this.id + '/episodes';
+            this.collection.url = app_URL + 'tvshows/season/' + this.id + '/episodes';
             this.collection.bind('sync add remove',function(){
                 self.render();
             });
@@ -19,6 +19,12 @@
             this.model.fetch({
                 success: function(){
                     self.render();
+                },
+                error: function (data) {
+                    if(data.status == 401){
+                        console.log("Token expired");
+                        app_router.navigate("",true);
+                    }
                 }
             });
         },
@@ -43,6 +49,12 @@
             this.model.fetch({
                 success: function(){
                     self.render();
+                },
+                error: function (data) {
+                    if(data.status == 401){
+                        console.log("Token expired");
+                        app_router.navigate("",true);
+                    }
                 }
             });
         },

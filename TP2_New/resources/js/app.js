@@ -2,9 +2,26 @@
  * Created by Rod on 15/10/15.
  */
 
+
+var app_URL = "http://localhost:3000/";
+
+Backbone.ajax = function() {
+
+    var token = $.cookie('myToken');
+
+    arguments[0].headers = {
+        'Authorization': token,
+        'Accept': "application/json"
+    };
+
+    return Backbone.$.ajax.apply(Backbone.$, arguments);
+};
+
 $(function(){
 
     // Router
+
+
 
     var AppRouter = Backbone.Router.extend({
         routes: {

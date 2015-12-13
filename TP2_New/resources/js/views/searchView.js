@@ -25,7 +25,7 @@
             });
 
             $.ajax({
-                url: "http://localhost:3000/search?q=" + query + "&limit=24",
+                url: app_URL + "search?q=" + query + "&limit=24",
                 type: 'GET',
                 dataType: 'JSON',
                 async: true,

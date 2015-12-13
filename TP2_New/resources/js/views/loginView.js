@@ -30,7 +30,7 @@
                 "password": $("#inputPasswordLogIn").val()
             };
             $.ajax({
-                url: "http://localhost:3000/login",
+                url: app_URL + "login",
                 type: 'POST',
                 data: loginData,
                 contentType: 'application/x-www-form-urlencoded',
@@ -56,7 +56,7 @@
                 "password": $("#inputPasswordSignUp").val()
             };
             $.ajax({
-                url: "http://localhost:3000/signup",
+                url: app_URL + "signup",
                 type: 'POST',
                 data: signupData,
                 contentType: 'application/x-www-form-urlencoded',
