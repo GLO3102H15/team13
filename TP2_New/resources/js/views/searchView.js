@@ -19,11 +19,6 @@
             var results;
             var resultsUsers;
             var query = this.options.q;
-            var token = $.cookie('myToken');
-
-            $.ajaxSetup({
-                headers: { "Authorization": token }
-            });
 
             $.ajax({
                 url: app_URL + "search/users?q=" + query + "&limit=24",

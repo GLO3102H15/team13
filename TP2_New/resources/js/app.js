@@ -4,10 +4,9 @@
 
 
 var app_URL = "http://localhost:3000/";
+var token = $.cookie('myToken');
 
 Backbone.ajax = function() {
-
-    var token = $.cookie('myToken');
 
     arguments[0].headers = {
         'Authorization': token,
@@ -16,6 +15,11 @@ Backbone.ajax = function() {
 
     return Backbone.$.ajax.apply(Backbone.$, arguments);
 };
+
+$.ajaxSetup({
+    headers: { "Authorization": token }
+});
+
 
 $(function(){
 

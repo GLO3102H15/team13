@@ -16,11 +16,6 @@
 
         render: function(){
             var self = this;
-            var token = $.cookie('myToken');
-
-            $.ajaxSetup({
-                headers: { "Authorization": token }
-            });
 
             $.ajax({
                 url: app_URL + "tokenInfo",
