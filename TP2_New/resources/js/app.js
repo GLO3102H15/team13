@@ -56,7 +56,7 @@ $(function(){
     });
 
     app_router.on('route:getSearch', function (query) {
-        var menuView = new MenuView();
+        //var menuView = new MenuView();
         var searchView = new SearchView({q: query});
     });
 

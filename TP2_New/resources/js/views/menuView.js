@@ -5,7 +5,8 @@
     MenuView = Backbone.View.extend({
         el: '#show_menu',
         events: {
-            'click #doSearch' : 'getResults'
+            'click #doSearch' : 'getResults',
+            'keyup #searchInput' : 'getResults'
         },
 
         initialize: function(){
