@@ -4,7 +4,7 @@
 $(function(){
     WatchlistsCollection = Backbone.Collection.extend({
         model: WatchlistModel,
-        url : 'http://localhost:3000/unsecure/watchlists',
+        url : app_URL + 'watchlists',
         parse: function(response){
             console.log(response);
             return response;
