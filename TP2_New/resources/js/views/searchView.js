@@ -5,6 +5,7 @@
     SearchView = Backbone.View.extend({
         el: '#show_content',
         events: {
+            'click .followUser': 'followUser'
         },
 
         initialize: function (options) {
@@ -53,6 +54,29 @@
                         console.log("Token expired");
                         app_router.navigate("",true);
                     }
+                }
+            });
+        },
+
+        followUser: function(event){
+            var userId = (event.target).id;
+            console.log("hago un post follow con id " + userId)
+            $.ajax({
+                url: app_URL + "follow" ,
+                type: 'POST',
+                data: {"id" : userId},
+                headers: {
+                    'content-type': "application/x-www-form-urlencoded"
+                },
+                success: function (data) {
+                    console.log("following " + userId);
+                },
+                error: function (data) {
+                    if(data.status == 401){
+                        console.log("Token expired");
+                        app_router.navigate("",true);
+                    }
+                    console.log(data);
                 }
             });
         }
