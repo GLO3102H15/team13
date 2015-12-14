@@ -31,7 +31,7 @@ $(document).ready(function(){
     });
     $('body').delegate('#save-watchlist-button','click',function(){
         name = $("#watchlist-input").val();
-        $.post('http://localhost:3000/unsecure/watchlists',{"name":name},function( data ){
+        $.post('http://localhost:3000/watchlists',{"name":name, "owner": tokenInformation.email},function( data ){
             html = '<a href="#/watchlists/'+data.id+'">';
             html += '<button id="'+data.id+'" class="btn btn-primary watchlistBtn" type="button">'+data.name;
             html += '<span class="badge">'+data.movies.length+' <span class="glyphicon glyphicon glyphicon-film" aria-hidden="true"></span></span>';

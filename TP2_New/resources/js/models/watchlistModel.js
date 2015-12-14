@@ -3,7 +3,7 @@
  */
 (function(){
     WatchlistModel = Backbone.Model.extend({
-        urlRoot : app_URL + 'watchlists/',
+        urlRoot : app_URL + 'watchlists',
         defaults: {
             name : '',
             movies : [],

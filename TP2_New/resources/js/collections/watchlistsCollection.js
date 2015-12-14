@@ -6,6 +6,7 @@ $(function(){
         model: WatchlistModel,
         url : app_URL + 'watchlists',
         parse: function(response){
+            console.log(tokenInformation.id);
             console.log(response);
             return response;
         }

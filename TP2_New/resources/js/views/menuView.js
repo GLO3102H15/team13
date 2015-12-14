@@ -6,7 +6,8 @@
         el: '#show_menu',
         events: {
             'click #doSearch' : 'getResults',
-            'keyup #searchInput' : 'getResults'
+            'keyup #searchInput' : 'getResults',
+            'click .btn-surprise' : 'getSurprise'
         },
 
         initialize: function(){
@@ -17,7 +18,14 @@
 
         render: function(){
             var self = this;
-
+            var name = tokenInformation.name;
+            var idUser = tokenInformation.id;
+            //console.log(data);
+            $.get('resources/templates/menuTemplate.html', function (data) {
+                self.template = _.template(data);
+                self.$el.html(self.template({username : name, idUser : idUser}));
+            }, 'html');
+            /*
             $.ajax({
                 url: app_URL + "tokenInfo",
                 type: 'GET',
@@ -39,6 +47,8 @@
                     }
                 }
             });
+            */
+
         },
 
         getResults: function(){
@@ -46,6 +56,13 @@
             var qURL = "search?q=" + qKey;
             app_router.navigate(qURL,true);
             //var resultsView = new SearchView({q : qURL, key : qKey});
+        },
+
+        getSurprise: function(){
+            var id = Surprise();
+            var qURL = "surprise/" + id;
+            app_router.navigate(qURL,true);
         }
+
     });
 })();
