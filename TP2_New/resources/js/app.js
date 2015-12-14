@@ -20,6 +20,28 @@ $.ajaxSetup({
     headers: { "Authorization": token }
 });
 
+var tokenInformation = getTokenInformation().responseJSON
+
+function getTokenInformation(){
+
+    return $.ajax({
+        url: app_URL + "tokenInfo",
+        type: 'GET',
+        dataType: 'JSON',
+        async: false,
+        success: function (data) {
+            //handleMovie(data)
+            return data;
+        },
+        error: function (data) {
+            if(data.status == 401){
+                console.log("Token expired");
+                app_router.navigate("",true);
+            }
+        }
+    });
+}
+console.log(tokenInformation);
 
 $(function(){
 
