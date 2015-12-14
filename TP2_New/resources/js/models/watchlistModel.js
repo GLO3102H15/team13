@@ -7,7 +7,7 @@
         defaults: {
             name : '',
             movies : [],
-            owner : 'hola',
+            owner : '',
             id : ''
         },
         parse: function(response){

@@ -19,29 +19,11 @@ Backbone.ajax = function() {
 $.ajaxSetup({
     headers: { "Authorization": token }
 });
-
-var tokenInformation = getTokenInformation().responseJSON
-
-function getTokenInformation(){
-
-    return $.ajax({
-        url: app_URL + "tokenInfo",
-        type: 'GET',
-        dataType: 'JSON',
-        async: false,
-        success: function (data) {
-            //handleMovie(data)
-            return data;
-        },
-        error: function (data) {
-            if(data.status == 401){
-                console.log("Token expired");
-                app_router.navigate("",true);
-            }
-        }
-    });
+console.log(token)
+if(token !== 'undefined') {
+    var tokenInformation = getTokenInformation().responseJSON
+    console.log(tokenInformation);
 }
-console.log(tokenInformation);
 
 $(function(){
 
@@ -140,3 +122,23 @@ $(function(){
     Backbone.history.start(); // Important! Active le routing dans Backbone
 
 });
+
+function getTokenInformation(){
+
+    return $.ajax({
+        url: app_URL + "tokenInfo",
+        type: 'GET',
+        dataType: 'JSON',
+        async: false,
+        success: function (data) {
+            //handleMovie(data)
+            return data;
+        },
+        error: function (data) {
+            if(data.status == 401){
+                console.log("Token expired");
+                app_router.navigate("",true);
+            }
+        }
+    });
+}
